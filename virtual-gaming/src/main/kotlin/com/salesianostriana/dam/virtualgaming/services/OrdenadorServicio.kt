@@ -7,6 +7,7 @@ import com.salesianostriana.dam.virtualgaming.models.Videojuego
 import com.salesianostriana.dam.virtualgaming.repositories.OrdenadorRepository
 import com.salesianostriana.dam.virtualgaming.repositories.UsuarioRepository
 import com.salesianostriana.dam.virtualgaming.repositories.VideojuegoRepository
+import com.salesianostriana.dam.virtualgaming.security.JwtTokenProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

@@ -7,6 +7,7 @@ import com.salesianostriana.dam.virtualgaming.models.Videojuego
 import com.salesianostriana.dam.virtualgaming.repositories.ImagenRepository
 import com.salesianostriana.dam.virtualgaming.repositories.UsuarioRepository
 import com.salesianostriana.dam.virtualgaming.repositories.VideojuegoRepository
+import com.salesianostriana.dam.virtualgaming.security.JwtTokenProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -45,7 +46,7 @@ class VideojuegoServicio {
         }
 
     fun createVideojuego(videojuegoNuevo: Videojuego, token:String): ResponseEntity<ListadoVideojuegoDTO>{
-        var usuario = usuRepo.findById(jwt.getUseIdFromJWT(token.split(" ")
+        var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
                 SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
                     .toTypedArray()[1]).toString(), Usuario::class.java)

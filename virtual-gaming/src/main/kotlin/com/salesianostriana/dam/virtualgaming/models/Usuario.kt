@@ -32,7 +32,7 @@ class Usuario(
         var fechaNacimiento:Date,
 
         @ElementCollection(fetch = FetchType.EAGER)
-        val rol: String,
+        val roles: MutableSet<String> = HashSet(),
 
         @ManyToMany(mappedBy = "likes")
         var deseados:MutableList<Videojuego> = mutableListOf(),
@@ -49,14 +49,14 @@ class Usuario(
         private val credentialsNonExpired : Boolean = true,
 
         @Id @GeneratedValue
-        private var id:UUID?= null
+        var id:UUID?= null
 
 ):UserDetails{
 
     constructor(nombreCompleto: String,username: String,password: String,
                 email: String, fechaNacimiento: Date, rol:String):this(
                 nombreCompleto,username, password,email,fechaNacimiento,
-                rol,mutableListOf<Videojuego>(), mutableListOf<Ordenador>(),
+                mutableSetOf(rol),mutableListOf<Videojuego>(), mutableListOf<Ordenador>(),
             true,true,true,true
 
     )
@@ -71,7 +71,7 @@ class Usuario(
     }
 
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> =
-            rol.map { SimpleGrantedAuthority("ROLE_$it") }.toMutableList()
+            roles.map { SimpleGrantedAuthority("ROLE_$it") }.toMutableList()
 
     override fun getPassword()= password
 
