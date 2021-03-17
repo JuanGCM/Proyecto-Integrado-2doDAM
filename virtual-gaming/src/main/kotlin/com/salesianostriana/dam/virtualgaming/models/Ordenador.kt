@@ -7,18 +7,18 @@ import javax.validation.constraints.NotBlank
 class Ordenador(
 
         @get:NotBlank(message="{usuario.password.blank}")
-        private var titulo:String,
+        var titulo:String,
 
         @OneToOne(cascade = arrayOf(CascadeType.ALL))
         @JoinColumn(name = "procesador_id")
-        private var procesador:Procesador,
+        var procesador:Procesador,
 
         @get:NotBlank(message="{usuario.password.blank}")
-        private var ram:Int,
+        var ram:Int,
 
         @OneToOne(cascade = arrayOf(CascadeType.ALL))
         @JoinColumn(name = "tarjetagrafica_id")
-        private var grafica:TarjetaGrafica,
+        var grafica:TarjetaGrafica,
 
         @OneToOne(mappedBy = "requisitos")
         private var videojuego: Videojuego,

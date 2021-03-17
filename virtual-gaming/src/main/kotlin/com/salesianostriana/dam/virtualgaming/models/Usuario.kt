@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.virtualgaming.models
 
 import org.springframework.security.core.GrantedAuthority
+import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 import java.util.*
 import javax.persistence.*
@@ -13,7 +14,7 @@ class Usuario(
 
         @Column(nullable = false, unique = true)
         @get:NotBlank(message = "{usuario.nombrecompleto.blank}")
-        private var nombreCompleto:String,
+        var nombreCompleto:String,
 
         @Column(nullable = false, unique = true)
         @get:NotBlank(message="{usuario.username.blank}")
@@ -25,48 +26,75 @@ class Usuario(
         @Column(nullable = false, unique = true)
         @get:NotBlank(message="{usuario.email.blank}")
         @get:Email(message="{usuario.email.email}")
-        private var email:String,
+        var email:String,
 
         @get:Past(message="{usuario.fechanacimiento.date}")
-        private var fechaNacimiento:Date,
+        var fechaNacimiento:Date,
+
+        @ElementCollection(fetch = FetchType.EAGER)
+        val rol: String,
 
         @ManyToMany(mappedBy = "likes")
-        private var deseados:MutableList<Videojuego> = mutableListOf(),
+        var deseados:MutableList<Videojuego> = mutableListOf(),
 
         @OneToMany(mappedBy = "usuario")
-        private var ordenadores:MutableList<Ordenador> = mutableListOf(),
+        var ordenadores:MutableList<Ordenador> = mutableListOf(),
+
+        private val nonExpired: Boolean = true,
+
+        private val nonLocked: Boolean = true,
+
+        private val enabled: Boolean = true,
+
+        private val credentialsNonExpired : Boolean = true,
 
         @Id @GeneratedValue
         private var id:UUID?= null
 
 ):UserDetails{
 
-    override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
-        TODO("Not yet implemented")
+    constructor(nombreCompleto: String,username: String,password: String,
+                email: String, fechaNacimiento: Date, rol:String):this(
+                nombreCompleto,username, password,email,fechaNacimiento,
+                rol,mutableListOf<Videojuego>(), mutableListOf<Ordenador>(),
+            true,true,true,true
+
+    )
+
+    fun addDeseados(videojuego:Videojuego){
+        this.deseados.add(videojuego)
+        videojuego.likes!!.add(this)
+    }
+    fun removeDeseados(videojuego:Videojuego){
+        this.deseados.remove(videojuego)
+        videojuego.likes!!.remove(this)
     }
 
-    override fun getPassword(): String {
-        TODO("Not yet implemented")
+    override fun getAuthorities(): MutableCollection<out GrantedAuthority> =
+            rol.map { SimpleGrantedAuthority("ROLE_$it") }.toMutableList()
+
+    override fun getPassword()= password
+
+    override fun getUsername()= username
+
+    override fun isAccountNonExpired()= nonExpired
+
+    override fun isAccountNonLocked()= nonLocked
+
+    override fun isCredentialsNonExpired()= credentialsNonExpired
+
+    override fun isEnabled() = enabled
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        other as Usuario
+        if (id != other.id) return false
+        return true
     }
 
-    override fun getUsername(): String {
-        TODO("Not yet implemented")
-    }
-
-    override fun isAccountNonExpired(): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun isAccountNonLocked(): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun isCredentialsNonExpired(): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun isEnabled(): Boolean {
-        TODO("Not yet implemented")
+    override fun hashCode(): Int {
+        return id?.hashCode() ?: 0
     }
 
 }

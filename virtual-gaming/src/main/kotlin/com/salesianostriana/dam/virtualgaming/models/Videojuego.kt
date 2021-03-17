@@ -9,28 +9,28 @@ import javax.validation.constraints.NotNull
 class Videojuego(
 
         @get:NotBlank(message="{videojuego.nombre.blank}")
-        private var nombre:String,
+        var nombre:String,
 
         @get:NotBlank(message="{videojuego.descripcion.blank}")
-        private var descripcion:String,
+        var descripcion:String,
 
         @get:Min(0, message = "{videojuego.precio.min}")
         @get:NotNull(message = "{videojuego.precio.null}")
-        private var precio:Double,
+        var precio:Double,
 
         @get:NotBlank(message="{videojuego.plataforma.blank}")
-        private var plataforma:String,
+        var plataforma:String,
 
         @OneToMany(mappedBy = "videojuego")
-        private var generoJuego:MutableList<GeneroJuego> = mutableListOf(),
+        var generoJuego:MutableList<GeneroJuego> = mutableListOf(),
 
         @OneToOne(cascade = arrayOf(CascadeType.ALL))
         @JoinColumn(name = "ordenador_id")
-        private var requisitos:Ordenador,
+        var requisitos:Ordenador,
 
         @OneToOne(cascade = arrayOf(CascadeType.ALL))
         @JoinColumn(name = "imagen_id")
-        private var imagen:ImagenVideojuego,
+        var imagen:ImagenVideojuego,
 
         @ManyToMany
         var likes: MutableList<Usuario>?= mutableListOf(),
