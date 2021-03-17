@@ -1,9 +1,6 @@
 package com.salesianostriana.dam.virtualgaming.models
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.OneToOne
+import javax.persistence.*
 import javax.validation.constraints.NotBlank
 
 @Entity
@@ -14,6 +11,9 @@ class TarjetaGrafica(
 
         @OneToOne(mappedBy = "grafica")
         private var ordenador: Ordenador,
+
+        @OneToMany(mappedBy = "minTarjetaGrafica")
+        var videojuego:Videojuego,
 
         @Id @GeneratedValue
         private var id:Long?

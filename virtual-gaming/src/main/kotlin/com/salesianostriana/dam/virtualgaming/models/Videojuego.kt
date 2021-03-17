@@ -21,7 +21,7 @@ class Videojuego(
         @get:NotBlank(message="{videojuego.plataforma.blank}")
         var plataforma:String,
 
-        @OneToMany(mappedBy = "videojuego")
+        @ManyToMany(mappedBy = "videojuegos")
         var generoJuego:MutableList<GeneroJuego> = mutableListOf(),
 
         @OneToOne(cascade = arrayOf(CascadeType.ALL))
@@ -31,12 +31,14 @@ class Videojuego(
         @ManyToMany
         var likes: MutableList<Usuario>?= mutableListOf(),
 
-        @
-        var procesador:Procesador,
+        @ManyToOne
+        var minProcesador:Procesador,
 
-        var tarjetaGrafica: TarjetaGrafica,
+        @ManyToOne
+        var minTarjetaGrafica: TarjetaGrafica,
 
-        var memoriaRAM: MemoriaRAM,
+        @ManyToOne
+        var minMemoriaRAM: MemoriaRAM,
 
         @Id @GeneratedValue
         private var id:Long?

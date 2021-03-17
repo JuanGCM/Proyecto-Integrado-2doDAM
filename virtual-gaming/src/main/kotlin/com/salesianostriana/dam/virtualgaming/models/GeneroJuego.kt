@@ -1,22 +1,19 @@
 package com.salesianostriana.dam.virtualgaming.models
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.ManyToOne
+import javax.persistence.*
 import javax.validation.constraints.NotBlank
 
 @Entity
 class GeneroJuego (
 
         @get:NotBlank(message = "{generojuego.titulo.blank}")
-        private var titulo:String,
+        var titulo:String,
 
-        @ManyToOne
-        private var videojuego:Videojuego,
+        @ManyToMany
+        var videojuegos:MutableList<Videojuego> = mutableListOf(),
 
         @Id @GeneratedValue
-        private var id:Long?
+        var id:Long?
 ) {
         override fun equals(other: Any?): Boolean {
                 if (this === other) return true
