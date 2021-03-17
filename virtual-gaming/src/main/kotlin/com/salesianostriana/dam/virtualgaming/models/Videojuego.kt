@@ -25,15 +25,18 @@ class Videojuego(
         var generoJuego:MutableList<GeneroJuego> = mutableListOf(),
 
         @OneToOne(cascade = arrayOf(CascadeType.ALL))
-        @JoinColumn(name = "ordenador_id")
-        var requisitos:Ordenador,
-
-        @OneToOne(cascade = arrayOf(CascadeType.ALL))
         @JoinColumn(name = "imagen_id")
         var imagen:ImagenVideojuego,
 
         @ManyToMany
         var likes: MutableList<Usuario>?= mutableListOf(),
+
+        @
+        var procesador:Procesador,
+
+        var tarjetaGrafica: TarjetaGrafica,
+
+        var memoriaRAM: MemoriaRAM,
 
         @Id @GeneratedValue
         private var id:Long?

@@ -20,9 +20,6 @@ class Ordenador(
         @JoinColumn(name = "tarjetagrafica_id")
         var grafica:TarjetaGrafica,
 
-        @OneToOne(mappedBy = "requisitos")
-        private var videojuego: Videojuego,
-
         @ManyToOne
         private var usuario:Usuario,
 
