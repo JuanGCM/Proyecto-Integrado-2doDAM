@@ -1,9 +1,10 @@
 package com.salesianostriana.dam.virtualgaming.services
 
+import com.salesianostriana.dam.virtualgaming.dtos.MisOrdenadoresDTO
+import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.errors.SingleEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.models.Ordenador
 import com.salesianostriana.dam.virtualgaming.models.Usuario
-import com.salesianostriana.dam.virtualgaming.models.Videojuego
 import com.salesianostriana.dam.virtualgaming.repositories.OrdenadorRepository
 import com.salesianostriana.dam.virtualgaming.repositories.UsuarioRepository
 import com.salesianostriana.dam.virtualgaming.repositories.VideojuegoRepository
@@ -28,7 +29,7 @@ class OrdenadorServicio {
     @Autowired
     lateinit var jwt: JwtTokenProvider
 
-    fun createMiOrdenador(ordenadorNuevo:Ordenador, token:String): ResponseEntity<ListadoOrdenadorDTO>{
+    fun createMiOrdenador(ordenadorNuevo:Ordenador, token:String): ResponseEntity<MisOrdenadoresDTO>{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
@@ -52,7 +53,7 @@ class OrdenadorServicio {
         return ordenador
     }
 
-    fun modifyOrdenador(id: Long, ordenadorNuevo: Ordenador): ResponseEntity<ListadoOrdenadorDTO> = ordenadorRepo.findById(id)
+    fun modifyOrdenador(id: Long, ordenadorNuevo: Ordenador): ResponseEntity<MisOrdenadoresDTO> = ordenadorRepo.findById(id)
             .map { ordenadorAModificar ->
                 ordenadorAModificar.titulo = ordenadorNuevo.titulo
                 ordenadorAModificar.procesador = ordenadorNuevo.procesador
@@ -65,11 +66,11 @@ class OrdenadorServicio {
 
     fun deleteOrdenador(id:Long):ResponseEntity<Any>{
         if(ordenadorRepo.existsById(id)){
-            var ordenador = ordenadorRepo.findById(id).orElseThrow {
-                SingleEntityNotFoundException(id.toString(),Ordenador::class.java)
-            }
-            var usuario = usuRepo
+
+            ordenadorRepo.deleteById(id)
+
         }
+        return ResponseEntity.noContent().build()
     }
 
 }

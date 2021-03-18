@@ -41,7 +41,7 @@ class Videojuego(
         var minMemoriaRAM: MemoriaRAM,
 
         @Id @GeneratedValue
-        private var id:Long?
+        var id:Long?
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

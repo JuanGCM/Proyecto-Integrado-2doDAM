@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.virtualgaming.services
 
+import com.salesianostriana.dam.virtualgaming.dtos.ListadoVideojuegoDTO
+import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.errors.ListEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.errors.SingleEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.models.Usuario

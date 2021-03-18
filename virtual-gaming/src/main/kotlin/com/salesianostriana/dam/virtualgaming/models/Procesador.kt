@@ -7,19 +7,19 @@ import javax.validation.constraints.NotBlank
 class Procesador(
 
         @get:NotBlank(message = "{procesador.marca.blank}")
-        private var marca:String,
+        var marca:String,
 
         @get:NotBlank(message = "{procesador.version.blank}")
-        private var version:String,
+        var version:String,
 
         @OneToOne(mappedBy = "procesador")
-        private var ordenador: Ordenador,
+        var ordenador: Ordenador,
 
         @OneToMany(mappedBy = "minProcesador")
         var videojuego:Videojuego,
 
         @Id @GeneratedValue
-        private var id:Long?
+        var id:Long?
 ) {
         override fun equals(other: Any?): Boolean {
                 if (this === other) return true

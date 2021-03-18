@@ -21,10 +21,10 @@ class Ordenador(
         var grafica:TarjetaGrafica,
 
         @ManyToOne
-        private var usuario:Usuario,
+        var usuario:Usuario,
 
         @Id @GeneratedValue
-        private var id:Long?
+        var id:Long?
 
 ){
         override fun equals(other: Any?): Boolean {

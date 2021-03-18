@@ -7,16 +7,16 @@ import javax.validation.constraints.NotBlank
 class TarjetaGrafica(
 
         @get:NotBlank(message = "{tarjetagrafica.fabricante.blank}")
-        private var fabricante:String,
+        var fabricante:String,
 
         @OneToOne(mappedBy = "grafica")
-        private var ordenador: Ordenador,
+        var ordenador: Ordenador,
 
         @OneToMany(mappedBy = "minTarjetaGrafica")
         var videojuego:Videojuego,
 
         @Id @GeneratedValue
-        private var id:Long?
+        var id:Long?
 
 ) {
         override fun equals(other: Any?): Boolean {
