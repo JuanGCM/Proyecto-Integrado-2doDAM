@@ -1,15 +1,9 @@
 package com.salesianostriana.dam.virtualgaming.dtos
 
-import com.salesianostriana.dam.virtualgaming.models.MemoriaRAM
-import com.salesianostriana.dam.virtualgaming.models.Procesador
-import com.salesianostriana.dam.virtualgaming.models.TarjetaGrafica
 import com.salesianostriana.dam.virtualgaming.models.Videojuego
-import org.hibernate.validator.constraints.Range
-import javax.persistence.Lob
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotBlank
-import javax.validation.constraints.NotNull
-import javax.validation.constraints.Size
+
 
 data class ListadoVideojuegoDTO(var id:Long,
 
@@ -35,7 +29,7 @@ data class UnVideojuegoDTO(var id:Long,
                           @get:NotBlank(message="{videojuego.plataforma.blank}")
                           var plataforma: String,
 
-                          var generoJuego:GeneroJuegoDTO,
+                          //var generoJuegos:GeneroJuegoDTO,
 
                           var minProcesador:ProcesadorDTO,
 
@@ -50,7 +44,7 @@ fun Videojuego.toDto() = ListadoVideojuegoDTO(
         id!!,
         nombre,
         precio,
-        imagen
+        imagen.toDto()
 )
 
 fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
@@ -59,9 +53,9 @@ fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
         descripcion,
         precio,
         plataforma,
-        generoJuego,
-        minProcesador,
-        minTarjetaGrafica,
-        minMemoriaRAM,
-        imagen
+        //generoJuegos.toDto(),
+        minProcesador.toDto(),
+        minTarjetaGrafica.toDto(),
+        minMemoriaRAM.toDto(),
+        imagen.toDto()
 )

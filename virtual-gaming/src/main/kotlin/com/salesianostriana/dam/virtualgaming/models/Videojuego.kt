@@ -22,7 +22,7 @@ class Videojuego(
         var plataforma:String,
 
         @ManyToMany(mappedBy = "videojuegos")
-        var generoJuego:MutableList<GeneroJuego> = mutableListOf(),
+        var generoJuegos:MutableList<GeneroJuego> = mutableListOf(),
 
         @OneToOne(cascade = arrayOf(CascadeType.ALL))
         @JoinColumn(name = "imagen_id")
@@ -55,5 +55,10 @@ class Videojuego(
         return if (id != null)
             id.hashCode()
         else 0
+    }
+
+    //helper imagen
+    fun addImagen(img:ImagenVideojuego){
+        imagen = img
     }
 }

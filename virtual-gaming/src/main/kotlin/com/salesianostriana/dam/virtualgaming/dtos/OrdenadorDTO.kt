@@ -19,7 +19,7 @@ data class MisOrdenadoresDTO(var id:Long,
 fun Ordenador.toDto() = MisOrdenadoresDTO(
         id!!,
         titulo,
-        procesador,
-        ram,
-        grafica
+        procesador.toDto(),
+        ram.toDto(),
+        grafica.toDto()
 )

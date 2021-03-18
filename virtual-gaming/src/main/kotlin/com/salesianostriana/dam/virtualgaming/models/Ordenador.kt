@@ -9,15 +9,13 @@ class Ordenador(
         @get:NotBlank(message="{usuario.password.blank}")
         var titulo:String,
 
-        @OneToOne(cascade = arrayOf(CascadeType.ALL))
-        @JoinColumn(name = "procesador_id")
+        @ManyToOne
         var procesador:Procesador,
 
-        @get:NotBlank(message="{usuario.password.blank}")
-        var ram:Int,
+        @ManyToOne
+        var ram:MemoriaRAM,
 
-        @OneToOne(cascade = arrayOf(CascadeType.ALL))
-        @JoinColumn(name = "tarjetagrafica_id")
+        @ManyToOne
         var grafica:TarjetaGrafica,
 
         @ManyToOne

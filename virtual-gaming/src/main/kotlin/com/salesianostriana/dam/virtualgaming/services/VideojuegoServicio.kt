@@ -59,6 +59,41 @@ class VideojuegoServicio {
         return ResponseEntity.status(HttpStatus.CREATED).body(videojuego.toDto())
     }
 
+    fun searchVideojuego(plataforma: String): ResponseEntity<List<ListadoVideojuegoDTO>> {
+        var resultado: List<Videojuego>
+        if (plataforma == "todos") {
+            resultado = findAll()
+        } else if (plataforma == "Steam") {
+            resultado = juegoRepo.findByPlataforma(plataforma)
+        } else if (plataforma == "Origin") {
+            resultado = juegoRepo.findByPlataforma(plataforma)
+        } else if (plataforma == "Battle.net") {
+            resultado = juegoRepo.findByPlataforma(plataforma)
+        } else if (plataforma == "Uplay") {
+            resultado = juegoRepo.findByPlataforma(plataforma)
+        } else if (plataforma == "Epic") {
+            resultado = juegoRepo.findByPlataforma(plataforma)
+        } else if (plataforma == "Rockstar") {
+            resultado = juegoRepo.findByPlataforma(plataforma)
+        }else {
+            resultado = findAll()
+        }
+
+        if (!resultado.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.FOUND).body(resultado.map { it.toDto() })
+        } else {
+            throw ListEntityNotFoundException(Videojuego::class.java)
+        }
+    }
+
+    fun getVideojuegoById(id:Long): Videojuego {
+        var videojuego = findById(id)
+        var imag = imagenRepo.findByVideojuego(videojuego)
+        videojuego.imagen = imag
+        return videojuego
+    }
+
+
     fun addVideojuegoToDeseado(vId: Long, token:String): ResponseEntity<ListadoVideojuegoDTO> {
         var idUsuario = jwt.getUserIdFromJWT(token.split(" ").toTypedArray()[1])
         var usuario = usuRepo.findById(idUsuario).orElseThrow {

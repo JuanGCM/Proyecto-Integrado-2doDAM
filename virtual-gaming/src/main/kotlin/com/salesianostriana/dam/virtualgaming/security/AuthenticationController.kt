@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.virtualgaming.security
 
+import com.salesianostriana.dam.virtualgaming.dtos.UsuarioDTO
+import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.models.Usuario
 import com.salesianostriana.dam.virtualgaming.services.UsuarioServicio
 import org.springframework.http.HttpStatus

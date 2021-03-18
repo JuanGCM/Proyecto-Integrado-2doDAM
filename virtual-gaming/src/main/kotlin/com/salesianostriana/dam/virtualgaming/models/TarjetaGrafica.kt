@@ -9,7 +9,7 @@ class TarjetaGrafica(
         @get:NotBlank(message = "{tarjetagrafica.fabricante.blank}")
         var fabricante:String,
 
-        @OneToOne(mappedBy = "grafica")
+        @OneToMany(mappedBy = "grafica")
         var ordenador: Ordenador,
 
         @OneToMany(mappedBy = "minTarjetaGrafica")

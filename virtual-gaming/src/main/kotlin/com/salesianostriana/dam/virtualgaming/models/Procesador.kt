@@ -12,7 +12,7 @@ class Procesador(
         @get:NotBlank(message = "{procesador.version.blank}")
         var version:String,
 
-        @OneToOne(mappedBy = "procesador")
+        @OneToMany(mappedBy = "procesador")
         var ordenador: Ordenador,
 
         @OneToMany(mappedBy = "minProcesador")
