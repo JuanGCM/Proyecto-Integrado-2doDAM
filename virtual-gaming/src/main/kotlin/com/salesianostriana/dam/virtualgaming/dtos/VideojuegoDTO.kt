@@ -29,7 +29,7 @@ data class UnVideojuegoDTO(var id:Long,
                           @get:NotBlank(message="{videojuego.plataforma.blank}")
                           var plataforma: String,
 
-                          //var generoJuegos:GeneroJuegoDTO,
+                          //var generoJuegos:List<GeneroJuegoDTO>,
 
                           var minProcesador:ProcesadorDTO,
 

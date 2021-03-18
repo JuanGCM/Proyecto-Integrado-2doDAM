@@ -10,10 +10,10 @@ class TarjetaGrafica(
         var fabricante:String,
 
         @OneToMany(mappedBy = "grafica")
-        var ordenador: Ordenador,
+        var ordenadores:MutableList<Ordenador> = mutableListOf(),
 
         @OneToMany(mappedBy = "minTarjetaGrafica")
-        var videojuego:Videojuego,
+        var videojuego:MutableList<Videojuego> = mutableListOf(),
 
         @Id @GeneratedValue
         var id:Long?

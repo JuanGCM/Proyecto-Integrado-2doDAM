@@ -10,10 +10,10 @@ class MemoriaRAM(
         var version:String,
 
         @OneToMany(mappedBy = "minMemoriaRAM")
-        var videojuego:Videojuego,
+        var videojuego:MutableList<Videojuego> = mutableListOf(),
 
         @OneToMany(mappedBy = "ram")
-        var ordenador: Ordenador,
+        var ordenadores:MutableList<Ordenador> = mutableListOf(),
 
         @Id @GeneratedValue
         var id:Long

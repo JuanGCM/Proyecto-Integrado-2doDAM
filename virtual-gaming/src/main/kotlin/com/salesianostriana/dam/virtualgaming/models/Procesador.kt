@@ -13,10 +13,10 @@ class Procesador(
         var version:String,
 
         @OneToMany(mappedBy = "procesador")
-        var ordenador: Ordenador,
+        var ordenadores:MutableList<Ordenador> = mutableListOf(),
 
         @OneToMany(mappedBy = "minProcesador")
-        var videojuego:Videojuego,
+        var videojuego:MutableList<Videojuego> = mutableListOf(),
 
         @Id @GeneratedValue
         var id:Long?
