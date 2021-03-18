@@ -1,15 +1,12 @@
 package com.salesianostriana.dam.virtualgaming.models
 
 import com.salesianostriana.dam.virtualgaming.imageupload.ImgurImageAttribute
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.OneToOne
+import javax.persistence.*
 
 @Entity
 class ImagenVideojuego (
 
-        @OneToOne(mappedBy = "imagen")
+        @ManyToOne
         var videojuego:Videojuego,
 
         var img: ImgurImageAttribute?= null,

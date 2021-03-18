@@ -24,9 +24,8 @@ class Videojuego(
         @ManyToMany(mappedBy = "videojuegos")
         var generoJuegos:MutableList<GeneroJuego> = mutableListOf(),
 
-        @OneToOne(cascade = arrayOf(CascadeType.ALL))
-        @JoinColumn(name = "imagen_id")
-        var imagen:ImagenVideojuego,
+        @OneToMany(mappedBy = "videojuego")
+        var imagenes:MutableList<ImagenVideojuego> = mutableListOf(),
 
         @ManyToMany
         var likes: MutableList<Usuario>?= mutableListOf(),
@@ -59,6 +58,18 @@ class Videojuego(
 
     //helper imagen
     fun addImagen(img:ImagenVideojuego){
-        imagen = img
+        imagenes.add(img)
+    }
+
+    fun removeImagen(img:ImagenVideojuego){
+        imagenes.remove(img)
+    }
+
+    fun addGeneroJuegos(generoJuego: GeneroJuego){
+        generoJuegos.add(generoJuego)
+    }
+
+    fun removeGeneroJuegos(generoJuego: GeneroJuego){
+        generoJuegos.remove(generoJuego)
     }
 }

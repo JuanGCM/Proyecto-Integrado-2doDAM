@@ -1,8 +1,10 @@
 package com.salesianostriana.dam.virtualgaming.dtos
 
 import com.salesianostriana.dam.virtualgaming.models.Videojuego
+import javax.persistence.Lob
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 
 data class ListadoVideojuegoDTO(var id:Long,
@@ -13,14 +15,15 @@ data class ListadoVideojuegoDTO(var id:Long,
                               @get:Min(0, message = "{videojuego.precio.min}")
                               var precio: Double,
 
-                              var imagen: ImagenDTO)
+                              var imagenes: List<ImagenDTO>?)
 
 data class UnVideojuegoDTO(var id:Long,
 
                           @get:NotBlank(message="{videojuego.nombre.blank}")
                           var nombre: String,
 
-                          @get:NotBlank(message="{videojuego.descripcion.blank}")
+                           @Lob
+                           @get:NotNull
                           var descripcion: String,
 
                           @get:Min(0, message = "{videojuego.precio.min}")
@@ -29,7 +32,7 @@ data class UnVideojuegoDTO(var id:Long,
                           @get:NotBlank(message="{videojuego.plataforma.blank}")
                           var plataforma: String,
 
-                          //var generoJuegos:List<GeneroJuegoDTO>,
+                          var generoJuegos:List<GeneroJuegoDTO>,
 
                           var minProcesador:ProcesadorDTO,
 
@@ -37,14 +40,14 @@ data class UnVideojuegoDTO(var id:Long,
 
                           var minMemoriaRAM:MemoriaRAMDTO,
 
-                          var imagen: ImagenDTO)
+                          var imagenes: List<ImagenDTO>?)
 
 
 fun Videojuego.toDto() = ListadoVideojuegoDTO(
         id!!,
         nombre,
         precio,
-        imagen.toDto()
+        imagenes.map { it.toDto() }
 )
 
 fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
@@ -53,9 +56,9 @@ fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
         descripcion,
         precio,
         plataforma,
-        //generoJuegos.toDto(),
+        generoJuegos.map { it.toDto() },
         minProcesador.toDto(),
         minTarjetaGrafica.toDto(),
         minMemoriaRAM.toDto(),
-        imagen.toDto()
+        imagenes.map { it.toDto() }
 )

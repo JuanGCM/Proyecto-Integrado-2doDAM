@@ -89,7 +89,7 @@ class VideojuegoServicio {
     fun getVideojuegoById(id:Long): Videojuego {
         var videojuego = findById(id)
         var imag = imagenRepo.findByVideojuego(videojuego)
-        videojuego.imagen = imag
+        videojuego.imagenes = imag
         return videojuego
     }
 
@@ -106,7 +106,7 @@ class VideojuegoServicio {
         var likes = usuRepo.findByDeseadoContains(juego)
         var imagen = imagenRepo.findByVideojuego(juego)
         juego.likes = likes
-        juego.imagen = imagen
+        juego.imagenes = imagen
         usuario.deseados = deseado
         usuario.addDeseados(juego)
         usuRepo.save(usuario)

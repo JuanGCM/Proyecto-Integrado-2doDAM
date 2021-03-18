@@ -66,14 +66,14 @@ class ImagenController(
 
 
     @PostMapping("/{idV}/img")
-    fun addToVivienda(@PathVariable("idV")idV:Long,
+    fun addToVideojuego(@PathVariable("idV")idV:Long,
                       @RequestPart("file") file: MultipartFile) : ResponseEntity<ImagenDTO> {
         try {
             var videojuego = juegoRepo.findById(idV).orElseThrow {
                 SingleEntityNotFoundException(idV.toString(),Videojuego::class.java)
             }
-            var imagen = imagenRepo.findByVideojuego(videojuego)
-            videojuego.imagen = imagen
+            var imagenes = imagenRepo.findByVideojuego(videojuego)
+            videojuego.imagenes = imagenes
             var imag = ImagenVideojuego(videojuego, ImgurImageAttribute("",""))
             var aux = servicio.save(imag,file)
             videojuego.addImagen(aux)
@@ -82,5 +82,20 @@ class ImagenController(
         } catch ( ex : ImgurBadRequest) {
             throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Error en la subida de la imagen")
         }
+    }
+
+    @DeleteMapping("/{id}/img/{hash}")
+    fun removeFromVideojuego(@PathVariable id: Long,@PathVariable hash:String) : ResponseEntity<Void> {
+        var v = juegoServicio.findById(id)
+        imagenRepo.findByVideojuego(v).map {
+            if(it.img!!.deletehash == hash){
+                servicio.delete(it)
+                v.removeImagen(it)
+                juegoRepo.save(v)
+                imgurServicio.delete(hash)
+            }
+        }
+
+        return ResponseEntity.noContent().build()
     }
 }

@@ -12,7 +12,6 @@ import javax.validation.constraints.Past
 @Entity
 class Usuario(
 
-        @Column(nullable = false, unique = true)
         @get:NotBlank(message = "{usuario.nombrecompleto.blank}")
         var nombreCompleto:String,
 
