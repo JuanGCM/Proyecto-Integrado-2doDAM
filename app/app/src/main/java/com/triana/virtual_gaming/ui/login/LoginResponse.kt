@@ -1,5 +1,6 @@
-package com.example.realestate.ui.login
+package com.triana.virtual_gaming.ui.login
 
+import com.triana.virtual_gaming.ui.login.User
 import com.google.gson.annotations.SerializedName
 
 data class LoginResponse(

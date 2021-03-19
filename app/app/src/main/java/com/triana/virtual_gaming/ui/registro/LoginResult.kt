@@ -1,6 +1,6 @@
-package com.example.realestate.ui.registro
+package com.triana.virtual_gaming.ui.registro
 
-import com.example.realestate.ui.registro.LoggedInUserView
+import com.triana.virtual_gaming.ui.registro.LoggedInUserView
 
 /**
  * Authentication result : success (user details) or error message.

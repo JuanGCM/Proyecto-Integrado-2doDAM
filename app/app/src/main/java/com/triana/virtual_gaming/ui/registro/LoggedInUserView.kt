@@ -1,4 +1,4 @@
-package com.example.realestate.ui.registro
+package com.triana.virtual_gaming.ui.registro
 
 /**
  * User details post authentication that is exposed to the UI

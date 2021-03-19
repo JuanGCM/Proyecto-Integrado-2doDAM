@@ -1,4 +1,4 @@
-package com.example.realestate.ui.login
+package com.triana.virtual_gaming.ui.login
 
 data class LoginRequest(
     val username: String,

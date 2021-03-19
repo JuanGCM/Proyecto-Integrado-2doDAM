@@ -1,4 +1,4 @@
-package com.example.realestate.ui.registro
+package com.triana.virtual_gaming.ui.registro
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +8,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.realestate.R
+import com.triana.virtual_gaming.R
 import com.example.realestate.ui.login.LoginActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
+import com.triana.virtual_gaming.ui.registro.RegisterRequest
+import com.triana.virtual_gaming.ui.registro.RegisterResponse
+import com.triana.virtual_gaming.ui.registro.RegisterService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

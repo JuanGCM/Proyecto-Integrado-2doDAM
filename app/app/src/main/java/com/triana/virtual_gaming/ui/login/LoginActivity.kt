@@ -1,4 +1,4 @@
-package com.example.realestate.ui.login
+package com.triana.virtual_gaming.ui.login
 
 import android.content.Context
 import android.content.Intent
@@ -9,10 +9,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.realestate.MainActivity
+import com.triana.virtual_gaming.ui.login.LoginRequest
+import com.triana.virtual_gaming.ui.login.LoginResponse
+import com.triana.virtual_gaming.ui.login.LoginService
+import com.triana.virtual_gaming.MainActivity
 
-import com.example.realestate.R
-import com.example.realestate.ui.registro.RegisterActivity
+import com.triana.virtual_gaming.R
+import com.triana.virtual_gaming.ui.registro.RegisterActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

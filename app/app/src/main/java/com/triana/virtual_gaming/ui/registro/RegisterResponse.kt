@@ -1,4 +1,4 @@
-package com.example.realestate.ui.registro
+package com.triana.virtual_gaming.ui.registro
 
 import java.util.*
 
