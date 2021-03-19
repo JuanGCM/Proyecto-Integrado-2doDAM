@@ -26,4 +26,8 @@ class MemoriaRAMController {
                       @RequestHeader("Authorization") token:String) : ResponseEntity<MemoriaRAMDTO> {
         return ResponseEntity.status(HttpStatus.CREATED).body(memoriaService.createMemoriaRAM(memoriaNueva,token).toDto())
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteMemoria(@PathVariable id: Long) =
+            memoriaService.deleteMemoria(id)
 }

@@ -43,9 +43,16 @@ class MemoriaRAMService {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
+
         var memoria = ramRepo.save(memoriaNueva)
-        ramRepo.save(memoria)
 
         return memoria
+    }
+
+    fun deleteMemoria(id: Long): ResponseEntity<Any>{
+        if(ramRepo.existsById(id)){
+            ramRepo.deleteById(id)
+        }
+        return ResponseEntity.noContent().build()
     }
 }

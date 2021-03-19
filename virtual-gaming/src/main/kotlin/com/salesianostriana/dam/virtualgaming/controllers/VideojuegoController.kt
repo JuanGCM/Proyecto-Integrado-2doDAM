@@ -37,10 +37,10 @@ class VideojuegoController {
     fun modifyVideojuego(@PathVariable id: Long,@Valid @RequestBody videojuegoNuevo: Videojuego)=
             juegoService.modifyVideojuego(id, videojuegoNuevo)
 
-
+/*
     @GetMapping("/{id}")
     fun getVideojuegoPorId(@PathVariable id:Long) = juegoService.getVideojuegoById(id).toSpecificDto()
-
+*/
 
     @DeleteMapping("/{id}")
     fun deleteVideojuego(@PathVariable id: Long) =

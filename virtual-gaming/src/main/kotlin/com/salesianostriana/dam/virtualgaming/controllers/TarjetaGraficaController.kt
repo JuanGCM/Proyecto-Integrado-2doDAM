@@ -25,4 +25,8 @@ class TarjetaGraficaController {
                          @RequestHeader("Authorization") token:String) : ResponseEntity<TarjetaGraficaDTO> {
         return ResponseEntity.status(HttpStatus.CREATED).body(graficaServicio.createGrafica(graficaNueva,token).toDto())
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteGrafica(@PathVariable id: Long) =
+            graficaServicio.deleteGrafica(id)
 }

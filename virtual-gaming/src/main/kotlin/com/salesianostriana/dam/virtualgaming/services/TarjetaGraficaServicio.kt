@@ -44,8 +44,14 @@ class TarjetaGraficaServicio {
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
         var grafica = graficaRepo.save(graficaNueva)
-        graficaRepo.save(grafica)
 
         return grafica
+    }
+
+    fun deleteGrafica(id: Long): ResponseEntity<Any>{
+        if(graficaRepo.existsById(id)){
+            graficaRepo.deleteById(id)
+        }
+        return ResponseEntity.noContent().build()
     }
 }
