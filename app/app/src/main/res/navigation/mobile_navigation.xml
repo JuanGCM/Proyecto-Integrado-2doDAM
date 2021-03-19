@@ -7,21 +7,21 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.realestate.ui.viviendas.ViviendasFragment"
+        android:name="com.triana.virtual_gaming.ui.videojuegos.VideojuegosFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_viviendas" />
+        tools:layout="@layout/fragment_video_game" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.realestate.ui.propias.PropiasFragment"
+        android:name="com.triana.virtual_gaming.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_propias" />
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.realestate.ui.favoritas.FavoritasFragment"
+        android:name="com.triana.virtual_gaming.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_favoritas" />
+        tools:layout="@layout/fragment_notifications" />
 
 
 </navigation>

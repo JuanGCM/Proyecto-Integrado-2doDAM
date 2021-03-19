@@ -1,4 +1,4 @@
-package com.example.realestate.data
+package com.triana.virtual_gaming.data
 
 /**
  * A generic class that holds a value with its loading status.

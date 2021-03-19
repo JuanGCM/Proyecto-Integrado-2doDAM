@@ -30,4 +30,6 @@
     <string name="email">Email</string>
     <string name="nombrecompleto">Nombre Completo</string>
     <string name="fechanacimiento">Fecha de Nacimiento</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

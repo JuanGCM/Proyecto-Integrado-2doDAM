@@ -1,6 +1,6 @@
-package com.example.realestate.data
+package com.triana.virtual_gaming.data
 
-import com.example.realestate.data.model.LoggedInUser
+import com.triana.virtual_gaming.data.model.LoggedInUser
 
 /**
  * Class that requests authentication and user information from the remote data source and

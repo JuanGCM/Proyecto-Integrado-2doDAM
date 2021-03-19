@@ -1,4 +1,4 @@
-package com.example.realestate.ui.viviendas
+package com.triana.virtual_gaming.ui.videojuegos
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.realestate.R
-import com.example.realestate.dummy.DummyContent
+import com.triana.virtual_gaming.R
+import com.triana.virtual_gaming.ui.videojuegos.dummy.DummyContent
 
 /**
  * A fragment representing a list of Items.
  */
-class ViviendaFragment : Fragment() {
+class VideojuegosFragment : Fragment() {
 
     private var columnCount = 1
 
@@ -30,7 +30,7 @@ class ViviendaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_viviendas_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_videojuego_list, container, false)
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -39,10 +39,7 @@ class ViviendaFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                /*adapter =
-                    MyViviendaRecyclerViewAdapter(
-                        DummyContent.ITEMS
-                    )*/
+                adapter = MyVideojuegosRecyclerViewAdapter(DummyContent.ITEMS)
             }
         }
         return view
@@ -56,7 +53,7 @@ class ViviendaFragment : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            ViviendaFragment().apply {
+            VideojuegosFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }

@@ -1,4 +1,4 @@
-package com.triana.virtual_gaming.dummy
+package com.triana.virtual_gaming.ui.videojuegos.dummy
 
 import java.util.ArrayList
 import java.util.HashMap

@@ -9,7 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.triana.virtual_gaming.R
-import com.example.realestate.ui.login.LoginActivity
+import com.triana.virtual_gaming.ui.login.LoginActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
 import com.triana.virtual_gaming.ui.registro.RegisterRequest
@@ -99,8 +99,8 @@ class RegisterActivity : AppCompatActivity() {
     fun doRegister() {
         Log.i("Entrada","Entra al login")
 
-        val registerData = RegisterRequest(username.text.toString(), password.text.toString(), email.text.toString(),
-                nombreCompleto.text.toString(), fechaNacimiento.text.toString())
+        val registerData = RegisterRequest(nombreCompleto.text.toString(), username.text.toString(), password.text.toString(), email.text.toString(),
+                fechaNacimiento.text.toString())
         Log.i("A enviar",registerData.toString())
         service.register(registerData).enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {

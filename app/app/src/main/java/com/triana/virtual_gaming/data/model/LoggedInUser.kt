@@ -1,4 +1,4 @@
-package com.example.realestate.data.model
+package com.triana.virtual_gaming.data.model
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository
