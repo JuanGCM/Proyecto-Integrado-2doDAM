@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository
 interface ImagenRepository : JpaRepository<ImagenVideojuego, Long> {
 
 
-    fun findByVideojuego(videojuego: Videojuego): MutableList<ImagenVideojuego>
+    fun findImagenesByVideojuego(videojuego: Videojuego): MutableList<ImagenVideojuego>
 
 
 }

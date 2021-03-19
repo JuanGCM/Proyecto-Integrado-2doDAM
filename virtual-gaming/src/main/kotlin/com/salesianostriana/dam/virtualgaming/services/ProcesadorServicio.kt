@@ -44,8 +44,14 @@ class ProcesadorServicio {
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
         var procesador = procesadorRepo.save(procesadorNuevo)
-        procesadorRepo.save(procesador)
 
         return procesador
+    }
+
+    fun deleteProcesador(id: Long): ResponseEntity<Any>{
+        if(procesadorRepo.existsById(id)){
+            procesadorRepo.deleteById(id)
+        }
+        return ResponseEntity.noContent().build()
     }
 }

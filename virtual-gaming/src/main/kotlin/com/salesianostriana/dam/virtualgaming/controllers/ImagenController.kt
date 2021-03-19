@@ -72,7 +72,7 @@ class ImagenController(
             var videojuego = juegoRepo.findById(idV).orElseThrow {
                 SingleEntityNotFoundException(idV.toString(),Videojuego::class.java)
             }
-            var imagenes = imagenRepo.findByVideojuego(videojuego)
+            var imagenes = imagenRepo.findImagenesByVideojuego(videojuego)
             videojuego.imagenes = imagenes
             var imag = ImagenVideojuego(videojuego, ImgurImageAttribute("",""))
             var aux = servicio.save(imag,file)
@@ -87,7 +87,7 @@ class ImagenController(
     @DeleteMapping("/{id}/img/{hash}")
     fun removeFromVideojuego(@PathVariable id: Long,@PathVariable hash:String) : ResponseEntity<Void> {
         var v = juegoServicio.findById(id)
-        imagenRepo.findByVideojuego(v).map {
+        imagenRepo.findImagenesByVideojuego(v).map {
             if(it.img!!.deletehash == hash){
                 servicio.delete(it)
                 v.removeImagen(it)

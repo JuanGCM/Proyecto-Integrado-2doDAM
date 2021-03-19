@@ -44,8 +44,14 @@ class GeneroJuegoServicio {
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
         var genero = generoRepo.save(generoNuevo)
-        generoRepo.save(genero)
 
         return genero
+    }
+
+    fun deleteGenero(id: Long): ResponseEntity<Any>{
+        if(generoRepo.existsById(id)){
+            generoRepo.deleteById(id)
+        }
+        return ResponseEntity.noContent().build()
     }
 }

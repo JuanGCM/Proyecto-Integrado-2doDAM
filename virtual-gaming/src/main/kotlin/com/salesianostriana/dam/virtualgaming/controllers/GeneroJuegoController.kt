@@ -25,4 +25,8 @@ class GeneroJuegoController {
                          @RequestHeader("Authorization") token:String) : ResponseEntity<GeneroJuegoDTO> {
         return ResponseEntity.status(HttpStatus.CREATED).body(generoServicio.createGeneroJuego(generoNuevo,token).toDto())
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteGenero(@PathVariable id: Long) =
+            generoServicio.deleteGenero(id)
 }

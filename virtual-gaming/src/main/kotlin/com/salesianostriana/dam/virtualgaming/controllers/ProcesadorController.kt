@@ -27,5 +27,7 @@ class ProcesadorController {
         return ResponseEntity.status(HttpStatus.CREATED).body(procesadorServicio.createProcesador(procesadorNuevo,token).toDto())
     }
 
-
+    @DeleteMapping("/{id}")
+    fun deleteProcesador(@PathVariable id: Long) =
+            procesadorServicio.deleteProcesador(id)
 }
