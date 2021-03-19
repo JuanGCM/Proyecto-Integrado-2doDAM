@@ -8,22 +8,23 @@ import javax.validation.constraints.NotNull
 
 
 data class ListadoVideojuegoDTO(var id:Long,
-
-                              @get:NotBlank(message="{videojuego.nombre.blank}")
-                              var nombre: String,
-
-                              @get:Min(0, message = "{videojuego.precio.min}")
-                              var precio: Double,
-
-                              var imagenes: List<ImagenDTO>?)
+                                @get:NotBlank(message="{videojuego.nombre.blank}")
+                                var nombre: String,
+                                @get:NotBlank(message="{videojuego.descripcion.blank}")
+                                var descripcion: String,
+                                @get:Min(0, message = "{videojuego.precio.min}")
+                                var precio: Double,
+                                @get:NotBlank(message="{videojuego.plataforma.blank}")
+                                var plataforma: String
+)
 
 data class UnVideojuegoDTO(var id:Long,
 
                           @get:NotBlank(message="{videojuego.nombre.blank}")
                           var nombre: String,
 
-                           @Lob
-                           @get:NotNull
+                          @Lob
+                          @get:NotNull
                           var descripcion: String,
 
                           @get:Min(0, message = "{videojuego.precio.min}")
@@ -32,13 +33,13 @@ data class UnVideojuegoDTO(var id:Long,
                           @get:NotBlank(message="{videojuego.plataforma.blank}")
                           var plataforma: String,
 
-                          var generoJuegos:List<GeneroJuegoDTO>,
+                          var generoJuegos:List<GeneroJuegoDTO>?,
 
-                          var minProcesador:ProcesadorDTO,
+                          var minProcesador:ProcesadorDTO?,
 
-                          var minTarjetaGrafica:TarjetaGraficaDTO,
+                          var minTarjetaGrafica:TarjetaGraficaDTO?,
 
-                          var minMemoriaRAM:MemoriaRAMDTO,
+                          var minMemoriaRAM:MemoriaRAMDTO?,
 
                           var imagenes: List<ImagenDTO>?)
 
@@ -46,8 +47,9 @@ data class UnVideojuegoDTO(var id:Long,
 fun Videojuego.toDto() = ListadoVideojuegoDTO(
         id!!,
         nombre,
+        descripcion,
         precio,
-        imagenes.map { it.toDto() }
+        plataforma
 )
 
 fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
@@ -57,8 +59,8 @@ fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
         precio,
         plataforma,
         generoJuegos.map { it.toDto() },
-        minProcesador.toDto(),
-        minTarjetaGrafica.toDto(),
-        minMemoriaRAM.toDto(),
+        minProcesador!!.toDto(),
+        minTarjetaGrafica!!.toDto(),
+        minMemoriaRAM!!.toDto(),
         imagenes.map { it.toDto() }
 )

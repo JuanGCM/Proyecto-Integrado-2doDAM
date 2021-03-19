@@ -16,7 +16,7 @@ class MemoriaRAM(
         var ordenadores:MutableList<Ordenador> = mutableListOf(),
 
         @Id @GeneratedValue
-        var id:Long
+        var id:Long?
 ) {
 
         override fun equals(other: Any?): Boolean {

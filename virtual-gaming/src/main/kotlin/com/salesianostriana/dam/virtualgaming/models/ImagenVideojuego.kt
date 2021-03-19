@@ -7,7 +7,7 @@ import javax.persistence.*
 class ImagenVideojuego (
 
         @ManyToOne
-        var videojuego:Videojuego,
+        var videojuego:Videojuego?,
 
         var img: ImgurImageAttribute?= null,
 

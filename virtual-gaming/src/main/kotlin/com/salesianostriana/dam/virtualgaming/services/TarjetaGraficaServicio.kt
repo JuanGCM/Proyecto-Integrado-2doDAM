@@ -37,7 +37,7 @@ class TarjetaGraficaServicio {
         }
     }
 
-    fun createGrafica(graficaNueva: TarjetaGrafica, token:String): ResponseEntity<TarjetaGraficaDTO> {
+    fun createGrafica(graficaNueva: TarjetaGrafica, token:String): TarjetaGrafica {
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
@@ -46,6 +46,6 @@ class TarjetaGraficaServicio {
         var grafica = graficaRepo.save(graficaNueva)
         graficaRepo.save(grafica)
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(grafica.toDto())
+        return grafica
     }
 }

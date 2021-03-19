@@ -37,7 +37,7 @@ class GeneroJuegoServicio {
         }
     }
 
-    fun createGeneroJuego(generoNuevo: GeneroJuego, token:String): ResponseEntity<GeneroJuegoDTO> {
+    fun createGeneroJuego(generoNuevo: GeneroJuego, token:String): GeneroJuego {
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
@@ -46,6 +46,6 @@ class GeneroJuegoServicio {
         var genero = generoRepo.save(generoNuevo)
         generoRepo.save(genero)
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(genero.toDto())
+        return genero
     }
 }

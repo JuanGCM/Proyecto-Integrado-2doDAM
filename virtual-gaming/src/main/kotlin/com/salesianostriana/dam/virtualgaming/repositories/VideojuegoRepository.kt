@@ -9,5 +9,5 @@ interface VideojuegoRepository:JpaRepository<Videojuego,Long> {
     fun findByPrecio(precio:Double):List<Videojuego>
     fun findByLikesContains(usuario:Usuario): MutableList<Videojuego>
     fun findByPlataforma(plataforma:String):List<Videojuego>
-    fun findByGeneroJuego(generoJuego:String):List<Videojuego>
+    //fun findByGeneroJuego(generoJuego:String):List<Videojuego>
 }

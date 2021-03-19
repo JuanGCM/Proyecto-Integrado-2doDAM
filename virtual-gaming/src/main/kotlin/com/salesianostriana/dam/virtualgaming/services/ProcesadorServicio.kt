@@ -37,7 +37,7 @@ class ProcesadorServicio {
         }
     }
 
-    fun createProcesador(procesadorNuevo: Procesador, token:String): ResponseEntity<ProcesadorDTO> {
+    fun createProcesador(procesadorNuevo: Procesador, token:String): Procesador {
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
@@ -46,6 +46,6 @@ class ProcesadorServicio {
         var procesador = procesadorRepo.save(procesadorNuevo)
         procesadorRepo.save(procesador)
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(procesador.toDto())
+        return procesador
     }
 }

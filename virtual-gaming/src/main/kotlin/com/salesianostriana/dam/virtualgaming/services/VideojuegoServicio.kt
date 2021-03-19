@@ -47,19 +47,17 @@ class VideojuegoServicio {
             SingleEntityNotFoundException(id.toString(),Videojuego::class.java)
         }
 
-    fun createVideojuego(videojuegoNuevo: Videojuego, token:String): ResponseEntity<ListadoVideojuegoDTO>{
+    fun createVideojuego(videojuegoNuevo: Videojuego, token:String): Videojuego{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
                 SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
-        var videojuego = juegoRepo.save(videojuegoNuevo)
-        usuRepo.save(usuario)
-        juegoRepo.save(videojuego)
-        return ResponseEntity.status(HttpStatus.CREATED).body(videojuego.toDto())
+
+        return juegoRepo.save(videojuegoNuevo)
     }
 
-    fun searchVideojuego(plataforma: String): ResponseEntity<List<ListadoVideojuegoDTO>> {
+    fun searchVideojuego(plataforma: String): List<Videojuego> {
         var resultado: List<Videojuego>
         if (plataforma == "todos") {
             resultado = findAll()
@@ -80,7 +78,7 @@ class VideojuegoServicio {
         }
 
         if (!resultado.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.FOUND).body(resultado.map { it.toDto() })
+            return resultado
         } else {
             throw ListEntityNotFoundException(Videojuego::class.java)
         }
@@ -93,8 +91,21 @@ class VideojuegoServicio {
         return videojuego
     }
 
+    fun modifyVideojuego(id: Long, videojuegoNuevo: Videojuego): ResponseEntity<ListadoVideojuegoDTO> =
+            juegoRepo.findById(id)
+                    .map { videojuegoAModificar ->
+                        videojuegoAModificar.nombre = videojuegoNuevo.nombre
+                        videojuegoAModificar.descripcion = videojuegoNuevo.descripcion
+                        videojuegoAModificar.precio = videojuegoNuevo.precio
+                        videojuegoAModificar.plataforma = videojuegoNuevo.plataforma
+                        ResponseEntity.status(HttpStatus.OK).body(juegoRepo.save(videojuegoAModificar).toDto())
+                    }.orElseThrow {
+                        SingleEntityNotFoundException(id.toString(),Videojuego::class.java)
+    }
 
-    fun addVideojuegoToDeseado(vId: Long, token:String): ResponseEntity<ListadoVideojuegoDTO> {
+/*
+
+    fun addVideojuegoToDeseados(vId: Long, token:String): ResponseEntity<ListadoVideojuegoDTO> {
         var idUsuario = jwt.getUserIdFromJWT(token.split(" ").toTypedArray()[1])
         var usuario = usuRepo.findById(idUsuario).orElseThrow {
             SingleEntityNotFoundException(idUsuario.toString(),Usuario::class.java)
@@ -124,19 +135,8 @@ class VideojuegoServicio {
         usuRepo.save(usu)
         juegoRepo.save(videojuego)
     }
-/*
-    fun modifyVivienda(id: Long, videojuegoNuevo: Videojuego): ResponseEntity<ListadoVideojuegoDTO> = juegoRepo.findById(id)
-            .map { videojuegoAModificar ->
-                videojuegoAModificar.nombre = videojuegoNuevo.nombre
-                videojuegoAModificar.descripcion = videojuegoNuevo.descripcion
-                videojuegoAModificar.precio = videojuegoNuevo.precio
-                videojuegoAModificar.plataforma = videojuegoNuevo.plataforma
-                videojuegoAModificar.generoJuego = videojuegoNuevo.generoJuego
-                videojuegoAModificar.requisitos = videojuegoNuevo.requisitos
-                ResponseEntity.status(HttpStatus.OK).body(juegoRepo.save(videojuegoAModificar).toDto())
-            }.orElseThrow {
-                SingleEntityNotFoundException(id.toString(),Videojuego::class.java)
-    }
+
+
  */
     fun deleteVideojuego(id: Long): ResponseEntity<Any>{
         if(juegoRepo.existsById(id)){

@@ -37,7 +37,7 @@ class MemoriaRAMService {
         }
     }
 
-    fun createMemoriaRAM(memoriaNueva: MemoriaRAM, token:String): ResponseEntity<MemoriaRAMDTO> {
+    fun createMemoriaRAM(memoriaNueva: MemoriaRAM, token:String): MemoriaRAM {
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
@@ -46,6 +46,6 @@ class MemoriaRAMService {
         var memoria = ramRepo.save(memoriaNueva)
         ramRepo.save(memoria)
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(memoria.toDto())
+        return memoria
     }
 }

@@ -31,13 +31,13 @@ class Videojuego(
         var likes: MutableList<Usuario>?= mutableListOf(),
 
         @ManyToOne
-        var minProcesador:Procesador,
+        var minProcesador:Procesador?,
 
         @ManyToOne
-        var minTarjetaGrafica: TarjetaGrafica,
+        var minTarjetaGrafica: TarjetaGrafica?,
 
         @ManyToOne
-        var minMemoriaRAM: MemoriaRAM,
+        var minMemoriaRAM: MemoriaRAM?,
 
         @Id @GeneratedValue
         var id:Long?
