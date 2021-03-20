@@ -14,7 +14,7 @@ import com.triana.virtual_gaming.ui.videojuegos.dummy.DummyContent.DummyItem
  * TODO: Replace the implementation with code for your data type.
  */
 class MyVideojuegosRecyclerViewAdapter(
-    private val values: List<DummyItem>
+    private var values: List<UnVideojuego>
 ) : RecyclerView.Adapter<MyVideojuegosRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,18 +25,19 @@ class MyVideojuegosRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        holder.nombre.text = item.nombre
+        holder.precio.text = item.precio.toString()+" €"
     }
 
     override fun getItemCount(): Int = values.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val idView: TextView = view.findViewById(R.id.item_number)
-        val contentView: TextView = view.findViewById(R.id.content)
+        val nombre: TextView = view.findViewById(R.id.nombre)
+        val precio: TextView = view.findViewById(R.id.precio)
+    }
 
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
+    fun setData(newVideojuego: List<UnVideojuego>) {
+        this.values = newVideojuego
+        notifyDataSetChanged()
     }
 }
