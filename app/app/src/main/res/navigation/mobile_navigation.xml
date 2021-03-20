@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.triana.virtual_gaming.ui.dashboard.DashboardFragment"
-        android:label="@string/title_buscar"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.triana.virtual_gaming.ui.videojuegos.VideojuegosFragment"
+        android:label="@string/title_vacio"
+        tools:layout="@layout/fragment_video_game" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.triana.virtual_gaming.ui.videojuegos.VideojuegosFragment"
-        android:label="@string/title_juegos"
-        tools:layout="@layout/fragment_video_game" />
+        android:name="com.triana.virtual_gaming.ui.dashboard.DashboardFragment"
+        android:label="@string/title_vacio"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.triana.virtual_gaming.ui.notifications.NotificationsFragment"
-        android:label="@string/title_perfil"
+        android:label="@string/title_vacio"
         tools:layout="@layout/fragment_notifications" />
 
 
