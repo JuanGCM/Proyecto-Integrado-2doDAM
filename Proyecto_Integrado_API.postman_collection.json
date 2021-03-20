@@ -1,0 +1,1233 @@
+{
+	"info": {
+		"_postman_id": "a4703b42-4811-49c7-9d3c-5c2404bb633b",
+		"name": "Proyecto_Integrado_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "http://localhost:9000/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCompleto\" : \"Juan Guillermo Chavez Marengo\",\r\n    \"username\" : \"juan\",\r\n    \"password\" : \"123\",\r\n    \"email\" : \"chavezmarengo@hotmail.com\",\r\n    \"fechaNacimiento\" : \"1996-04-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "http://localhost:9000/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"juan\",\r\n    \"password\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateVideojuego",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0NzE5MWYyMi1kZGYxLTQzMGUtOTQ0OC00MjM0MjU5MGFkNzUiLCJleHAiOjE2MTY0MDAxODQsImlhdCI6MTYxNjE0MDk4NCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.KabSRGcQ5-TdAa1Ky5BkmuQKjjMl_84chqveDsD5lIcoPmG1PdNKqVwPtK6N8dLX10OT_pn1mUfpqkF5P_5AYQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Sea of Thieves\",\r\n    \"descripcion\" : \"Podrás navegar con tus amigos en busca de tesoros y enemigos en el camino\",\r\n    \"precio\" : 32.0,\r\n    \"plataforma\" : \"Steam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/videojuegos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"videojuegos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateVideojuego2",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTg3YWM4ZS1lNjIwLTQxYTgtYjkzMC1mYjAyOWYxZTEzNmIiLCJleHAiOjE2MTY0MDM3MjUsImlhdCI6MTYxNjE0NDUyNSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.9A78NmQZJMsD0bNXYQVh0N4CJv6R4ggO4UN4Ns94KLt8xYdf6oKl_XF03dxQmLvXQKPLgslGHVaTgUk92D3HwQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Among Us\",\r\n    \"descripcion\" : \"Encuentra al impostor antes de que elimine a toda la tripulacion\",\r\n    \"precio\" : 6.0,\r\n    \"plataforma\" : \"Steam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/videojuegos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"videojuegos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetAllVideojuegos",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTg3YWM4ZS1lNjIwLTQxYTgtYjkzMC1mYjAyOWYxZTEzNmIiLCJleHAiOjE2MTY0MDM3MjUsImlhdCI6MTYxNjE0NDUyNSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.9A78NmQZJMsD0bNXYQVh0N4CJv6R4ggO4UN4Ns94KLt8xYdf6oKl_XF03dxQmLvXQKPLgslGHVaTgUk92D3HwQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/videojuegos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"videojuegos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EditVideojuegoPorId",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNDE4ODk5My1lZTg3LTQ1NmEtYjIwNi1jMjIxYzU1NTZkMmUiLCJleHAiOjE2MTY0MDU4MTYsImlhdCI6MTYxNjE0NjYxNiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.XvVvaUo8kNUBBUJjRGzIo7-GiQc9DAsQjYgjgpHIl6zAFFiHyP68y2VdVrXnLM_3-bCPBwpriV0yklBeVYn7cg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Sea of Thieves\",\r\n    \"descripcion\" : \"Podrás navegar con tus amigos en busca de retos y tesoros\",\r\n    \"precio\" : 30.0,\r\n    \"plataforma\" : \"Steam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/videojuegos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"videojuegos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetVideojuegoPorId",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkODNiNzI2My04NzgyLTQwMDctOGE2OS02MDU3Y2Y2ZWM1ZmEiLCJleHAiOjE2MTY0MDYyNTUsImlhdCI6MTYxNjE0NzA1NSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.hzwxh27Wvgr5TKV80_U8JeD1QZbolcvNOXRzR_kffMMca7W6NoUo8va6XFtLkffLCdvh3kMSBX5rG2hrw2zXNg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/videojuegos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"videojuegos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteVideojuegoPorId",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkODNiNzI2My04NzgyLTQwMDctOGE2OS02MDU3Y2Y2ZWM1ZmEiLCJleHAiOjE2MTY0MDYyNTUsImlhdCI6MTYxNjE0NzA1NSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.hzwxh27Wvgr5TKV80_U8JeD1QZbolcvNOXRzR_kffMMca7W6NoUo8va6XFtLkffLCdvh3kMSBX5rG2hrw2zXNg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/videojuegos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"videojuegos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateProcesador",
+			"item": [
+				{
+					"name": "http://localhost:9000/procesadores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMjFlNjQ4MS01YWY4LTRmNmUtOGE4Mi0yNTFhMGZiMmYxNmEiLCJleHAiOjE2MTY0MTQwODAsImlhdCI6MTYxNjE1NDg4MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UD_xLhTZ1lQ0QVnY18e9QSAscs1ifO1hY3Kj3IZmZcL7qYOjQc1nYOijHl3DGDzPuWUpAgTZU4uDKSfPY_GGOQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"marca\" : \"Intel\",\r\n    \"version\" : \"core i7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/procesadores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"procesadores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateProcesador2",
+			"item": [
+				{
+					"name": "http://localhost:9000/procesadores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMjFlNjQ4MS01YWY4LTRmNmUtOGE4Mi0yNTFhMGZiMmYxNmEiLCJleHAiOjE2MTY0MTQwODAsImlhdCI6MTYxNjE1NDg4MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UD_xLhTZ1lQ0QVnY18e9QSAscs1ifO1hY3Kj3IZmZcL7qYOjQc1nYOijHl3DGDzPuWUpAgTZU4uDKSfPY_GGOQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"marca\" : \"Intel\",\r\n    \"version\" : \"core i5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/procesadores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"procesadores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateProcesador3",
+			"item": [
+				{
+					"name": "http://localhost:9000/procesadores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMjFlNjQ4MS01YWY4LTRmNmUtOGE4Mi0yNTFhMGZiMmYxNmEiLCJleHAiOjE2MTY0MTQwODAsImlhdCI6MTYxNjE1NDg4MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UD_xLhTZ1lQ0QVnY18e9QSAscs1ifO1hY3Kj3IZmZcL7qYOjQc1nYOijHl3DGDzPuWUpAgTZU4uDKSfPY_GGOQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"marca\" : \"AMD\",\r\n    \"version\" : \"Ryzen 5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/procesadores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"procesadores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetAllProcesadores",
+			"item": [
+				{
+					"name": "http://localhost:9000/procesadores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMjFlNjQ4MS01YWY4LTRmNmUtOGE4Mi0yNTFhMGZiMmYxNmEiLCJleHAiOjE2MTY0MTQwODAsImlhdCI6MTYxNjE1NDg4MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UD_xLhTZ1lQ0QVnY18e9QSAscs1ifO1hY3Kj3IZmZcL7qYOjQc1nYOijHl3DGDzPuWUpAgTZU4uDKSfPY_GGOQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/procesadores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"procesadores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteProcesadorPorIr",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhOTY1ZmEyOC0zNGI2LTQxOWYtODgyMS1iOGI5YzU4MzI0MWYiLCJleHAiOjE2MTY0MTY0NTAsImlhdCI6MTYxNjE1NzI1MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.oOxWFRcgOGecjEuaJ2O4KOauMmy6JJrxhSccoFAE_nz98eyQOGyDkKEcO54gDcKWbGHd13tN6jpB5ioIewQPHw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/procesadores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"procesadores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateMemoriaRAM",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\" : \"8GB DDR3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/memorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"memorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateMemoriaRAM2",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\" : \"4GB DDR4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/memorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"memorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateMemoriaRAM3",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\" : \"16GB DDR4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/memorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"memorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetAllMemorias",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/memorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"memorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteMemoriaPorIr",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhOTY1ZmEyOC0zNGI2LTQxOWYtODgyMS1iOGI5YzU4MzI0MWYiLCJleHAiOjE2MTY0MTY0NTAsImlhdCI6MTYxNjE1NzI1MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.oOxWFRcgOGecjEuaJ2O4KOauMmy6JJrxhSccoFAE_nz98eyQOGyDkKEcO54gDcKWbGHd13tN6jpB5ioIewQPHw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/memorias/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"memorias",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateGrafica",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fabricante\" : \"NVIDIA GTX 750 ti\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/graficas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"graficas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateGrafica2",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fabricante\" : \"NVIDIA GTX 1080\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/graficas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"graficas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateGrafica3",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fabricante\" : \"NVIDIA RTX 3080\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/graficas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"graficas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetAllGraficas",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/graficas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"graficas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteGraficaPorId",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhOTY1ZmEyOC0zNGI2LTQxOWYtODgyMS1iOGI5YzU4MzI0MWYiLCJleHAiOjE2MTY0MTY0NTAsImlhdCI6MTYxNjE1NzI1MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.oOxWFRcgOGecjEuaJ2O4KOauMmy6JJrxhSccoFAE_nz98eyQOGyDkKEcO54gDcKWbGHd13tN6jpB5ioIewQPHw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/graficas/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"graficas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateGeneroJuego",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Accion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateGeneroJuego2",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Estrategia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateGeneroJuego3",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetAllGeneroJuegos",
+			"item": [
+				{
+					"name": "http://localhost:9000/memorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteGeneroPorId",
+			"item": [
+				{
+					"name": "http://localhost:9000/videojuegos/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhOTY1ZmEyOC0zNGI2LTQxOWYtODgyMS1iOGI5YzU4MzI0MWYiLCJleHAiOjE2MTY0MTY0NTAsImlhdCI6MTYxNjE1NzI1MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.oOxWFRcgOGecjEuaJ2O4KOauMmy6JJrxhSccoFAE_nz98eyQOGyDkKEcO54gDcKWbGHd13tN6jpB5ioIewQPHw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/generos/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"generos",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
