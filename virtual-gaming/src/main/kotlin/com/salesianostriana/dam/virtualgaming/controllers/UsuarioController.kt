@@ -4,20 +4,19 @@ import com.salesianostriana.dam.virtualgaming.dtos.UsuarioDTO
 import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.models.Usuario
 import com.salesianostriana.dam.virtualgaming.services.UsuarioServicio
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
+import java.util.*
 import javax.validation.Valid
 
 @RestController
 @RequestMapping("/user")
 class UsuarioController(
         val usuarioServicio: UsuarioServicio
-) {
+){
 
     @PostMapping("/")
     fun nuevoUsuario(@Valid @RequestBody usuarioNuevo:Usuario):ResponseEntity<UsuarioDTO> =
@@ -27,4 +26,10 @@ class UsuarioController(
                 ResponseStatusException(HttpStatus.BAD_REQUEST,
                         "El nombre de usuario ${usuarioNuevo.username} ya existe"
                 ) }
+
+    @GetMapping("/{id}")
+    fun getUsuarioPorId(@PathVariable id:UUID):ResponseEntity<UsuarioDTO> {
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioServicio.findById(id).toDto())
+    }
+
 }
