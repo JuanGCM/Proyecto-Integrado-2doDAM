@@ -14,11 +14,12 @@ class MyPerfilRecycleViewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_videojuego, parent, false)
+            .inflate(R.layout.perfil_fragment, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         val item = values
         holder.nombreCompleto.text = item.nombreCompleto
         holder.username.text = item.username
