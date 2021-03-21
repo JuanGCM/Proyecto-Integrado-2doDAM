@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.triana.virtual_gaming.ui.notifications.NotificationsFragment"
+        android:name="com.triana.virtual_gaming.ui.perfil.PerfilFragment"
         android:label="@string/title_vacio"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/perfil_fragment" />
 
 
 </navigation>
