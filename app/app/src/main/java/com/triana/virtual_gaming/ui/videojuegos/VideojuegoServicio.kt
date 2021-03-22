@@ -11,7 +11,7 @@ interface VideojuegoServicio{
     @GET("/videojuegos")
     fun getvideojuegos(): Call<List<UnVideojuego>>
 
-    @GET("/user")
+    @GET("/user/{username}")
     fun getUsuario(@Path("username") username:String):Call<User>
 
     /*

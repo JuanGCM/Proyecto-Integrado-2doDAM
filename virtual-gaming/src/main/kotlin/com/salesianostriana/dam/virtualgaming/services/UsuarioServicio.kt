@@ -49,13 +49,7 @@ class UsuarioServicio {
                         Usuario::class.java
                 ) }
 
-    fun findByToken(token:String):Usuario{
-        var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
-                .toTypedArray()[1])).orElseThrow {
-            SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
-                    .toTypedArray()[1]).toString(), Usuario::class.java)
-        }
-
-        return usuario
+    fun findByUsuario(username:String) = usuRepo.findByUsername(username).orElseThrow {
+            SingleEntityNotFoundException(username,Usuario::class.java)
     }
 }

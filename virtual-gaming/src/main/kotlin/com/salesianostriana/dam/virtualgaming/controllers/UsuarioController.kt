@@ -27,9 +27,9 @@ class UsuarioController(
                         "El nombre de usuario ${usuarioNuevo.username} ya existe"
                 ) }
 
-    @GetMapping()
-    fun getUsuarioPorToken(@RequestHeader("Authorization") token:String):ResponseEntity<UsuarioDTO> {
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioServicio.findByToken(token).toDto())
+    @GetMapping("/{username}")
+    fun getUsuarioPorUsername(@PathVariable username: String):ResponseEntity<UsuarioDTO> {
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioServicio.findByUsuario(username).toDto())
     }
 
 }

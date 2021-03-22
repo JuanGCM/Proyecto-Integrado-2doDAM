@@ -31,15 +31,16 @@ class ProfileViewModel : ViewModel() {
             .build()
         service = retrofitUsuario.create(VideojuegoServicio::class.java)
         getUser("juan")
+
     }
-    //Se puede extraer el username en el LoginFragment
+
     fun getUser(username:String){
 
         service.getUsuario(username).enqueue(object :Callback<User>{
 
             override fun onResponse(call: Call<User>, response: Response<User>) {
 
-                if(response.code() == 200){
+                if(response.code() == 201){
                     Log.i("ERROR","Hace la petición")
                     _usuario.value = response.body()
                 }
