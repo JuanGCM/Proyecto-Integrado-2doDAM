@@ -25,8 +25,8 @@ data class UsuarioDTO (
 )
 
 fun Usuario.toDto(): UsuarioDTO = UsuarioDTO(
+        nombreCompleto,
         username,
         email,
-        nombreCompleto,
         fechaNacimiento,
         id)

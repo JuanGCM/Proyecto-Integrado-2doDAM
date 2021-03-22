@@ -2,6 +2,7 @@ package com.triana.virtual_gaming.ui.perfil
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,11 +16,11 @@ import androidx.lifecycle.Observer
 class PerfilFragment : Fragment() {
 
     private lateinit var perfilViewModel: PerfilViewModel
-    lateinit var usuario: User
-    lateinit var perfilAdapter: MyPerfilRecycleViewAdapter
+    var usuario: User = User("","","","","")
+    //lateinit var perfilAdapter: MyPerfilRecycleViewAdapter
 
-    companion object {
-        fun newInstance() = PerfilFragment()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -33,16 +34,15 @@ class PerfilFragment : Fragment() {
         perfilViewModel =
             ViewModelProvider(this).get(PerfilViewModel::class.java)
 
-        val v = view as RecyclerView
-
-        perfilAdapter = MyPerfilRecycleViewAdapter(usuario)
-        v.layoutManager = LinearLayoutManager(context)
-        v.adapter= perfilAdapter
+        //perfilAdapter = MyPerfilRecycleViewAdapter(usuario)
 
         perfilViewModel.usu.observe(viewLifecycleOwner, Observer {
                 usua -> usuario = usua
-            perfilAdapter.setData(usua)
+            //perfilAdapter.setData(usua)
+            Log.i("Usu",usuario.nombreCompleto)
         })
+
+
 
         return view
     }

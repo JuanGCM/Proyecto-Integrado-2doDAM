@@ -4,6 +4,7 @@ import com.triana.virtual_gaming.ui.login.User
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Path
 
 interface VideojuegoServicio{
 
@@ -11,7 +12,7 @@ interface VideojuegoServicio{
     fun getvideojuegos(): Call<List<UnVideojuego>>
 
     @GET("/user")
-    fun getUsuario():Call<User>
+    fun getUsuario(@Path("username") username:String):Call<User>
 
     /*
     @GET("/viviendas/mine")

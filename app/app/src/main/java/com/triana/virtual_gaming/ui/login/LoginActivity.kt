@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.triana.virtual_gaming.ui.login.LoginRequest
 import com.triana.virtual_gaming.ui.login.LoginResponse
@@ -15,6 +16,7 @@ import com.triana.virtual_gaming.ui.login.LoginService
 import com.triana.virtual_gaming.MainActivity
 
 import com.triana.virtual_gaming.R
+import com.triana.virtual_gaming.ui.perfil.PerfilViewModel
 import com.triana.virtual_gaming.ui.registro.RegisterActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var password: EditText
     lateinit var login: Button
     lateinit var toregister: Button
+    lateinit var auth:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,8 +58,16 @@ class LoginActivity : AppCompatActivity() {
         service = retrofit.create(LoginService::class.java)
 
         login.setOnClickListener(View.OnClickListener {
-            doLogin()
+            auth = doLogin()
         })
+/*
+        val bundle = Bundle()
+        bundle.putString("token", auth)
+        intent = Intent(this@LoginActivity,PerfilViewModel::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
+
+ */
 
         toregister.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, RegisterActivity::class.java).apply {
@@ -65,12 +76,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
-
-
     }
 
-    fun doLogin() {
+    fun doLogin(): String {
         Log.i("Entrada","Entra al login")
+
+        var auth = ""
 
         val loginData = LoginRequest(username.text.toString(), password.text.toString())
 
@@ -97,12 +108,15 @@ class LoginActivity : AppCompatActivity() {
                     Log.i("FalloLogin", "Login incorrecto")
                     Toast.makeText(context,"Datos no válidos",Toast.LENGTH_SHORT).show();
                 }
+                auth = response.body()?.token.toString()
             }
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 Log.i("MIGUEL", "Error")
                 Log.i("MIGUEL", t.message.toString())
             }
         })
+
+        return auth
     }
 }
 
