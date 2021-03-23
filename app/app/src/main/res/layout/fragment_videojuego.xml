@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="410dp"
     android:layout_height="150dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:id="@+id/idjuego">
 
     <ImageView
         android:id="@+id/imagenVideojuego"
