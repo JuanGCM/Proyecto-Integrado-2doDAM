@@ -40,7 +40,10 @@ class WebSecurityConfiguration(private val userDetailsService: UserDetailsServic
                 .authorizeRequests()
                 .antMatchers("/h2-console").permitAll()
                 .antMatchers(POST, "/auth/login","/auth/token","/user","/auth/register").permitAll()
-                .antMatchers(GET, "/videojuegos", "/videojuegos?plat=**","/videojuegos/{id}").permitAll()
+                .antMatchers(GET, "/videojuegos",
+                        "/videojuegos?plat=**",
+                        "/videojuegos/{id}",
+                        "/videojuegos/{id}?cd1=**?cd2=**?cd3=**").permitAll()
                 .antMatchers(POST,"/videojuegos","/videojuego/{idV}/img").hasRole("USER")
                 .antMatchers(GET, "/videojuegos/favs").hasRole("USER")
                 .antMatchers(PUT, "/videojuegos/{id}").hasRole("USER")

@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface GeneroJuegoRepository:JpaRepository<GeneroJuego,Long> {
 
-    fun findByTitulo(titulo:String):List<GeneroJuego>
+    fun findByTitulo(titulo:String):GeneroJuego
     //fun findGenerosByVideojuego(videojuegos: MutableList<Videojuego>): MutableList<GeneroJuego>
 }

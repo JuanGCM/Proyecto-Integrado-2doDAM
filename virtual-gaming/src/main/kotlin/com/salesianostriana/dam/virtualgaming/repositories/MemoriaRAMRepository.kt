@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 interface MemoriaRAMRepository: JpaRepository<MemoriaRAM, Long> {
 
     fun findMemoriaByVideojuego(videojuego: Videojuego): MemoriaRAM
+
+    fun findByCode(codigo:Int): MemoriaRAM
 }

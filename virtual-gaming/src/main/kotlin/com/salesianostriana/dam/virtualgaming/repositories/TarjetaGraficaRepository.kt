@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 interface TarjetaGraficaRepository: JpaRepository<TarjetaGrafica, Long> {
 
     fun findGraficaByVideojuego(videojuego: Videojuego): TarjetaGrafica
+
+    fun findByCode(codigo:Int):TarjetaGrafica
 }

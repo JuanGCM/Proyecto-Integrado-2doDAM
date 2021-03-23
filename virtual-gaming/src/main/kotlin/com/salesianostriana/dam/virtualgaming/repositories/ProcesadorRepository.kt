@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 interface ProcesadorRepository: JpaRepository<Procesador, Long> {
 
     fun findProcesadorByVideojuego(videojuego: Videojuego): Procesador
+
+    fun findByCode(codigo:Int): Procesador
 }

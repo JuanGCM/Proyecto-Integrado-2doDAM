@@ -21,7 +21,7 @@ class Videojuego(
         @get:NotBlank(message="{videojuego.plataforma.blank}")
         var plataforma:String,
 
-        @ManyToMany(mappedBy = "videojuegos")
+        @ManyToMany(mappedBy = "videojuegos", fetch = FetchType.LAZY)
         var generoJuegos:MutableList<GeneroJuego>? = mutableListOf(),
 
         @OneToMany(mappedBy = "videojuego")
@@ -31,7 +31,7 @@ class Videojuego(
         var likes: MutableList<Usuario>?= mutableListOf(),
 
         @ManyToOne
-        var minProcesador:Procesador?,
+        var minProcesador:Procesador? = null,
 
         @ManyToOne
         var minTarjetaGrafica: TarjetaGrafica?,
@@ -64,9 +64,22 @@ class Videojuego(
     fun removeImagen(img:ImagenVideojuego){
         imagenes!!.remove(img)
     }
+    fun addProcesador(procesador: Procesador){
+        minProcesador = procesador
+        procesador.videojuego!!.add(this)
+    }
+    fun addGrafica(grafica: TarjetaGrafica){
+        minTarjetaGrafica = grafica
+        grafica.videojuego!!.add(this)
+    }
+    fun addRAM(memoriaRAM: MemoriaRAM){
+        minMemoriaRAM = memoriaRAM
+        memoriaRAM.videojuego!!.add(this)
+    }
 
     fun addGeneroJuegos(generoJuego: GeneroJuego){
         generoJuegos!!.add(generoJuego)
+        generoJuego.videojuegos!!.add(this)
     }
 
     fun removeGeneroJuegos(generoJuego: GeneroJuego){

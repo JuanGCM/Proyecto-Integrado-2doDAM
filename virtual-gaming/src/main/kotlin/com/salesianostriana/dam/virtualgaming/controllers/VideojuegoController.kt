@@ -37,10 +37,20 @@ class VideojuegoController {
     fun modifyVideojuego(@PathVariable id: Long,@Valid @RequestBody videojuegoNuevo: Videojuego)=
             juegoService.modifyVideojuego(id, videojuegoNuevo)
 
-/*
+
     @GetMapping("/{id}")
-    fun getVideojuegoPorId(@PathVariable id:Long) = juegoService.getVideojuegoById(id).toSpecificDto()
-*/
+    fun getVideojuegoPorId(@PathVariable id:Long) : ResponseEntity<ListadoVideojuegoDTO> {
+        return ResponseEntity.status(HttpStatus.CREATED).body(juegoService.getVideojuegoById(id).toDto())
+    }
+
+    /*
+    @GetMapping("/{id}")
+    fun getJuegoCompletoPorId(@PathVariable id:Long,
+                              @RequestParam(name = "cd1") codeP:Int,
+                              @RequestParam(name = "cd3") codeG:Int,
+                              @RequestParam(name="cd3") codeM: Int) = juegoService.getJuegoCompletoById(id, codeP,codeG,codeM).toSpecificDto()
+
+     */
 
     @DeleteMapping("/{id}")
     fun deleteVideojuego(@PathVariable id: Long) =

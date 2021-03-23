@@ -93,22 +93,31 @@ class VideojuegoServicio {
             throw ListEntityNotFoundException(Videojuego::class.java)
         }
     }
-/*
+
     fun getVideojuegoById(id:Long): Videojuego {
         var videojuego = findById(id)
-        //var generos = generoRepo.findGenerosByVideojuego(videojuego)
-        var procesador = procesadorRepo.findProcesadorByVideojuego(videojuego)
-        var grafica = graficaRepo.findGraficaByVideojuego(videojuego)
-        var memoria = ramRepo.findMemoriaByVideojuego(videojuego)
-        var images = imagenRepo.findImagenesByVideojuego(videojuego)
-        //videojuego.generoJuegos = generos
-        videojuego.minProcesador = procesador
-        videojuego.minMemoriaRAM = memoria
-        videojuego.minTarjetaGrafica = grafica
-        videojuego.imagenes = images
         return videojuego
     }
-*/
+
+
+    /*
+    fun getJuegoCompletoById(id:Long, cP:Int,cG:Int,cM:Int):Videojuego{
+        var videojuego = findById(id)
+        var procesador = procesadorRepo.findByCode(cP)
+        var grafica = graficaRepo.findByCode(cG)
+        var memoria = ramRepo.findByCode(cM)
+        videojuego.addProcesador(procesador)
+        videojuego.addGrafica(grafica)
+        videojuego.addRAM(memoria)
+        juegoRepo.save(videojuego)
+        procesadorRepo.save(procesador)
+        graficaRepo.save(grafica)
+        ramRepo.save(memoria)
+        return videojuego
+    }
+
+     */
+
     fun modifyVideojuego(id: Long, videojuegoNuevo: Videojuego): ResponseEntity<ListadoVideojuegoDTO> =
             juegoRepo.findById(id)
                     .map { videojuegoAModificar ->
