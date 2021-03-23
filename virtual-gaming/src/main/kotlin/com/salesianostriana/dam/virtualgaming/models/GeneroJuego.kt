@@ -10,7 +10,7 @@ class GeneroJuego (
         var titulo:String,
 
         @ManyToMany
-        var videojuegos:MutableList<Videojuego> = mutableListOf(),
+        var videojuegos:MutableList<Videojuego>? = mutableListOf(),
 
         @Id @GeneratedValue
         var id:Long?

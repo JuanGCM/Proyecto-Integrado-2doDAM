@@ -33,7 +33,7 @@ data class UnVideojuegoDTO(var id:Long,
                           @get:NotBlank(message="{videojuego.plataforma.blank}")
                           var plataforma: String,
 
-                          var generoJuegos:List<GeneroJuegoDTO>?,
+                          //var generoJuegos:List<GeneroJuegoDTO>?,
 
                           var minProcesador:ProcesadorDTO?,
 
@@ -58,9 +58,9 @@ fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
         descripcion,
         precio,
         plataforma,
-        generoJuegos.map { it.toDto() },
+        //generoJuegos.map { it.toDto() },
         minProcesador!!.toDto(),
         minTarjetaGrafica!!.toDto(),
         minMemoriaRAM!!.toDto(),
-        imagenes.map { it.toDto() }
+        imagenes!!.map { it.toDto() }
 )

@@ -96,12 +96,12 @@ class VideojuegoServicio {
 /*
     fun getVideojuegoById(id:Long): Videojuego {
         var videojuego = findById(id)
-        var generos = generoRepo.findGenerosByVideojuego(videojuego)
+        //var generos = generoRepo.findGenerosByVideojuego(videojuego)
         var procesador = procesadorRepo.findProcesadorByVideojuego(videojuego)
         var grafica = graficaRepo.findGraficaByVideojuego(videojuego)
         var memoria = ramRepo.findMemoriaByVideojuego(videojuego)
         var images = imagenRepo.findImagenesByVideojuego(videojuego)
-        videojuego.generoJuegos = generos
+        //videojuego.generoJuegos = generos
         videojuego.minProcesador = procesador
         videojuego.minMemoriaRAM = memoria
         videojuego.minTarjetaGrafica = grafica

@@ -2,18 +2,22 @@ package com.salesianostriana.dam.virtualgaming.models
 
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 @Entity
 class TarjetaGrafica(
 
-        @get:NotBlank(message = "{tarjetagrafica.fabricante.blank}")
-        var fabricante:String,
+        @get:NotBlank(message = "{tarjetagrafica.titulo.blank}")
+        var titulo:String,
+
+        @get:NotNull(message = "{tarjetagrafica.code.null}")
+        var code:Int,
 
         @OneToMany(mappedBy = "grafica")
-        var ordenadores:MutableList<Ordenador> = mutableListOf(),
+        var ordenadores:MutableList<Ordenador>? = mutableListOf(),
 
         @OneToMany(mappedBy = "minTarjetaGrafica")
-        var videojuego:MutableList<Videojuego> = mutableListOf(),
+        var videojuego:MutableList<Videojuego>? = mutableListOf(),
 
         @Id @GeneratedValue
         var id:Long?

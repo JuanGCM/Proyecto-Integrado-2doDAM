@@ -2,21 +2,22 @@ package com.salesianostriana.dam.virtualgaming.models
 
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 @Entity
 class Procesador(
 
-        @get:NotBlank(message = "{procesador.marca.blank}")
-        var marca:String,
+        @get:NotBlank(message = "{procesador.titulo.blank}")
+        var titulo:String,
 
-        @get:NotBlank(message = "{procesador.version.blank}")
-        var version:String,
+        @get:NotNull(message = "{procesador.code.null}")
+        var code:Int,
 
         @OneToMany(mappedBy = "procesador")
-        var ordenadores:MutableList<Ordenador> = mutableListOf(),
+        var ordenadores:MutableList<Ordenador>? = mutableListOf(),
 
         @OneToMany(mappedBy = "minProcesador")
-        var videojuego:MutableList<Videojuego> = mutableListOf(),
+        var videojuego:MutableList<Videojuego>? = mutableListOf(),
 
         @Id @GeneratedValue
         var id:Long?

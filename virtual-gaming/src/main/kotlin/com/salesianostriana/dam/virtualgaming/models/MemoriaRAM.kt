@@ -2,18 +2,22 @@ package com.salesianostriana.dam.virtualgaming.models
 
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 @Entity
 class MemoriaRAM(
 
-        @NotBlank(message = "{memoriaram.version.blank}")
-        var version:String,
+        @get:NotBlank(message = "{memoriaram.titulo.blank}")
+        var titulo:String,
+
+        @get:NotNull(message = "{memoriaram.code.null}")
+        var code:Int,
 
         @OneToMany(mappedBy = "minMemoriaRAM")
-        var videojuego:MutableList<Videojuego> = mutableListOf(),
+        var videojuego:MutableList<Videojuego>? = mutableListOf(),
 
         @OneToMany(mappedBy = "ram")
-        var ordenadores:MutableList<Ordenador> = mutableListOf(),
+        var ordenadores:MutableList<Ordenador>? = mutableListOf(),
 
         @Id @GeneratedValue
         var id:Long?

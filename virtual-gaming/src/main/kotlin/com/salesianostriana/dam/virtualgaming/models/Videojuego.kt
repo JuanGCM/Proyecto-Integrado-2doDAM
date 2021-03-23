@@ -22,10 +22,10 @@ class Videojuego(
         var plataforma:String,
 
         @ManyToMany(mappedBy = "videojuegos")
-        var generoJuegos:MutableList<GeneroJuego> = mutableListOf(),
+        var generoJuegos:MutableList<GeneroJuego>? = mutableListOf(),
 
         @OneToMany(mappedBy = "videojuego")
-        var imagenes:MutableList<ImagenVideojuego> = mutableListOf(),
+        var imagenes:MutableList<ImagenVideojuego>? = mutableListOf(),
 
         @ManyToMany
         var likes: MutableList<Usuario>?= mutableListOf(),
@@ -58,18 +58,18 @@ class Videojuego(
 
     //helper imagen
     fun addImagen(img:ImagenVideojuego){
-        imagenes.add(img)
+        imagenes!!.add(img)
     }
 
     fun removeImagen(img:ImagenVideojuego){
-        imagenes.remove(img)
+        imagenes!!.remove(img)
     }
 
     fun addGeneroJuegos(generoJuego: GeneroJuego){
-        generoJuegos.add(generoJuego)
+        generoJuegos!!.add(generoJuego)
     }
 
     fun removeGeneroJuegos(generoJuego: GeneroJuego){
-        generoJuegos.remove(generoJuego)
+        generoJuegos!!.remove(generoJuego)
     }
 }
