@@ -1,6 +1,5 @@
 package com.triana.virtual_gaming.ui.videojuegos
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,17 +8,19 @@ import android.view.LayoutInflater
 import androidx.lifecycle.Observer
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.triana.virtual_gaming.R
-import com.triana.virtual_gaming.ui.videojuegoDetalles.VideojuegoDetailsActivity
+import com.triana.virtual_gaming.ui.videojuegoDetails.MiObservable
 
 
-class VideojuegosFragment : Fragment() {
+class VideojuegosFragment : Fragment(){
 
     private lateinit var videojuegosViewModel: VideojuegosViewModel
     var listaVideojuegos:List<UnVideojuego> = listOf()
     lateinit var listaAdapter: MyVideojuegosRecyclerViewAdapter
+    private lateinit var miObservable: MiObservable
 
 
 
@@ -33,6 +34,10 @@ class VideojuegosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_videojuego_list, container, false)
+
+        miObservable = activity?.run {
+            ViewModelProvider(this).get(MiObservable::class.java)
+        } ?: throw Exception("Invalid Activity")
 
         videojuegosViewModel =
                 ViewModelProvider(this).get(VideojuegosViewModel::class.java)
@@ -48,18 +53,8 @@ class VideojuegosFragment : Fragment() {
             listaAdapter.setData(games.sortedWith(compareBy({ it.id })))
         })
 
-        var listado:RecyclerView = view.findViewById(R.id.listado)
-        listado.setOnClickListener {
-            view -> openVideojuegoDetail()
-
-        }
-
         return view
     }
 
-    fun openVideojuegoDetail(){
-        //var intent:Intent = Intent(this,VideojuegoDetailsActivity::class.java)
-        //startActivity(intent)
-    }
-
 }
+

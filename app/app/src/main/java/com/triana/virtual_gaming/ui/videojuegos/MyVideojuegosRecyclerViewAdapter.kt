@@ -1,11 +1,15 @@
 package com.triana.virtual_gaming.ui.videojuegos
 
+import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.triana.virtual_gaming.R
+import com.triana.virtual_gaming.ui.videojuegoDetalles.VideojuegoDetailsActivity
 
 import com.triana.virtual_gaming.ui.videojuegos.dummy.DummyContent.DummyItem
 
@@ -20,6 +24,7 @@ class MyVideojuegosRecyclerViewAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.fragment_videojuego, parent, false)
+
         return ViewHolder(view)
     }
 

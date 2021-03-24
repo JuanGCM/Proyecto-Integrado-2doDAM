@@ -4,6 +4,7 @@ import com.salesianostriana.dam.virtualgaming.dtos.ListadoVideojuegoDTO
 import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.errors.ListEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.errors.SingleEntityNotFoundException
+import com.salesianostriana.dam.virtualgaming.models.GeneroJuego
 import com.salesianostriana.dam.virtualgaming.models.Usuario
 import com.salesianostriana.dam.virtualgaming.models.Videojuego
 import com.salesianostriana.dam.virtualgaming.repositories.*
@@ -96,6 +97,10 @@ class VideojuegoServicio {
 
     fun getVideojuegoById(id:Long): Videojuego {
         var videojuego = findById(id)
+        var imagens = imagenRepo.findImagenesByVideojuego(videojuego)
+        videojuego.imagenes = imagens
+        juegoRepo.save(videojuego)
+
         return videojuego
     }
 

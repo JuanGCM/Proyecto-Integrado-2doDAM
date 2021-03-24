@@ -94,7 +94,7 @@ class VirtualGamingApplication{
 						"de misiones,además cuenta con modo Online.",9.89,"Rockstar",mutableListOf(),mutableListOf(),mutableListOf(),null,null,null,515192556156),
 
 				Videojuego("Dead by Daylight", "Tienes poco tiempo para escapar de un asesino" +
-						"que anda buscandote, intenta escapar junto de tus amigos o morir en el intento",5.22,"Steam",mutableListOf(),mutableListOf(),mutableListOf(),null,null,null,51515105556),
+						" que anda buscandote, intenta escapar junto de tus amigos o morir en el intento",5.22,"Steam",mutableListOf(),mutableListOf(),mutableListOf(),null,null,null,51515105556),
 
 				Videojuego("Horizon Zero Dawn", "Es un RPG de acción en el que controlas a Aloy, una " +
 						"superviviente humana en un paisaje distópico del siglo 31",24.73,"Steam",mutableListOf(),mutableListOf(),mutableListOf(),null,null,null,515151599656),
@@ -102,7 +102,7 @@ class VirtualGamingApplication{
 				Videojuego("Overwatch", "Es un shooter multijugador en " +
 						"primera persona basado en equipos. ",12.98,"Battle.net",mutableListOf(),mutableListOf(),mutableListOf(),null,null,null,51515163006),
 
-				Videojuego("World of Warcraft", "Es un juego mundo abierto donde podra hacer " +
+				Videojuego("World of Warcraft", "Es un juego mundo abierto donde podras hacer " +
 						"muchas misiones, hacer amigos y adentrarte en la historia",69.99,"Battle.net",mutableListOf(),mutableListOf(),mutableListOf(),null,null,null,51515161778),
 
 				Videojuego("Borderlands 3", "Es un shooter en primera persona basado en la " +

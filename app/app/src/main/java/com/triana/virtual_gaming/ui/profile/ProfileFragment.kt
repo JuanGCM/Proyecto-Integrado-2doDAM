@@ -53,7 +53,7 @@ class ProfileFragment : Fragment() {
         })
 
         perfilViewModel.usu.observe(viewLifecycleOwner, Observer {
-                usua -> fechaNaci.text = usua.fechaNacimiento
+                usua -> fechaNaci.text = usua.fechaNacimiento.split("T")[0]
         })
 
 
