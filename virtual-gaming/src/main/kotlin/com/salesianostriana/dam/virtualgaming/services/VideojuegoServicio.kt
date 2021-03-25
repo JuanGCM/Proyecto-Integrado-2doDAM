@@ -104,25 +104,6 @@ class VideojuegoServicio {
         return videojuego
     }
 
-
-    /*
-    fun getJuegoCompletoById(id:Long, cP:Int,cG:Int,cM:Int):Videojuego{
-        var videojuego = findById(id)
-        var procesador = procesadorRepo.findByCode(cP)
-        var grafica = graficaRepo.findByCode(cG)
-        var memoria = ramRepo.findByCode(cM)
-        videojuego.addProcesador(procesador)
-        videojuego.addGrafica(grafica)
-        videojuego.addRAM(memoria)
-        juegoRepo.save(videojuego)
-        procesadorRepo.save(procesador)
-        graficaRepo.save(grafica)
-        ramRepo.save(memoria)
-        return videojuego
-    }
-
-     */
-
     fun modifyVideojuego(id: Long, videojuegoNuevo: Videojuego): ResponseEntity<ListadoVideojuegoDTO> =
             juegoRepo.findById(id)
                     .map { videojuegoAModificar ->

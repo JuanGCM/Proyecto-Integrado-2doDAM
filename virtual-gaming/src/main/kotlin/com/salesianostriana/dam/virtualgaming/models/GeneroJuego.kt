@@ -28,4 +28,5 @@ class GeneroJuego (
                         id.hashCode()
                 else 0
         }
+
 }

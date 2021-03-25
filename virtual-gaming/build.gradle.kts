@@ -24,15 +24,21 @@ repositories {
 }
 
 dependencies {
+	//Lo usamos para definir las entidades y los tipo de relacion entre clases
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	//Lo usamos para la securidad y la aplicacion tenga un login
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	//Usado para definir una aplicacion web
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	//Usado para la validacion de algunos parametros de clases
 	implementation("org.springframework.boot:spring-boot-starter-validation")
+	//Para obtener una documentacion de las distintas consultas en los controladores
 	implementation("io.springfox:springfox-swagger2:2.7.0")
 	implementation("io.springfox:springfox-swagger-ui:2.7.0")
+	//Lo usamos para la implementacion del token y sus diversos usos
 	implementation (group= "io.jsonwebtoken", name= "jjwt-api", version="0.11.2")
 	implementation (group= "io.jsonwebtoken", name= "jjwt-impl", version="0.11.2")
 	implementation (group= "io.jsonwebtoken", name= "jjwt-jackson", version="0.11.2")

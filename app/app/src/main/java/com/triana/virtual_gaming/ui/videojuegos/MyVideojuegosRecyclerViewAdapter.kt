@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import com.triana.virtual_gaming.R
+import com.triana.virtual_gaming.ui.videojuegoDetails.JuegoDetallesFragment
 import com.triana.virtual_gaming.ui.videojuegoDetalles.VideojuegoDetailsActivity
 
 import com.triana.virtual_gaming.ui.videojuegos.dummy.DummyContent.DummyItem

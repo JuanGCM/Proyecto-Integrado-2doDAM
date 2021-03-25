@@ -21,7 +21,7 @@ class Videojuego(
         @get:NotBlank(message="{videojuego.plataforma.blank}")
         var plataforma:String,
 
-        @ManyToMany(mappedBy = "videojuegos", fetch = FetchType.LAZY)
+        @ManyToMany(mappedBy = "videojuegos")
         var generoJuegos:MutableList<GeneroJuego>? = mutableListOf(),
 
         @OneToMany(mappedBy = "videojuego")

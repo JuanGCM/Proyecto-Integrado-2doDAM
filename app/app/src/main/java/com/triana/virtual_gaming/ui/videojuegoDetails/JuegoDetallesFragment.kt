@@ -20,7 +20,7 @@ class JuegoDetallesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.juego_detalles_fragment, container, false)
+        return inflater.inflate(R.layout.activity_videojuego_details, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -37,16 +37,6 @@
         app:layout_constraintStart_toEndOf="@+id/imagenVideojuego"
         app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
-    <Button
-        android:id="@+id/ir_detalle"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edit_buttom"
-        android:drawableRight="@drawable/ic_ir"
-        android:text="Ir"
-        app:layout_constraintStart_toEndOf="@+id/nombre"
-        app:layout_constraintTop_toTopOf="@+id/nombre" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
