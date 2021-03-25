@@ -84,7 +84,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0NzE5MWYyMi1kZGYxLTQzMGUtOTQ0OC00MjM0MjU5MGFkNzUiLCJleHAiOjE2MTY0MDAxODQsImlhdCI6MTYxNjE0MDk4NCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.KabSRGcQ5-TdAa1Ky5BkmuQKjjMl_84chqveDsD5lIcoPmG1PdNKqVwPtK6N8dLX10OT_pn1mUfpqkF5P_5AYQ",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NmU4MTM2ZS01ZjFkLTQ5ODctODcwMy0xNTljYTUwNzMwMjAiLCJleHAiOjE2MTY2OTg5OTIsImlhdCI6MTYxNjQzOTc5MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.znhpUuA0Fj651oQpD5Oy1t9SMSMV1KDcSFeTKpIIutRiNEZQGqwptfzEdkKGA_G3zASMvIFaTjAbc3SkVRkPgQ",
 									"type": "string"
 								},
 								{
@@ -132,7 +132,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTg3YWM4ZS1lNjIwLTQxYTgtYjkzMC1mYjAyOWYxZTEzNmIiLCJleHAiOjE2MTY0MDM3MjUsImlhdCI6MTYxNjE0NDUyNSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.9A78NmQZJMsD0bNXYQVh0N4CJv6R4ggO4UN4Ns94KLt8xYdf6oKl_XF03dxQmLvXQKPLgslGHVaTgUk92D3HwQ",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlODg3N2I3OS05YjljLTRkZWYtOGY1Ny05MjQ2MTRkMjk5NjAiLCJleHAiOjE2MTY2MzQzOTMsImlhdCI6MTYxNjM3NTE5MywicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.RLmkhvTK39WMi0xFpkH24yoc2eWIYdpy7fQuQ15Xk7Mzam6L70FJwpavWCv6UzYB2BrMtCIp1NBeWt3hjQadcQ",
 									"type": "string"
 								},
 								{
@@ -146,7 +146,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\" : \"Among Us\",\r\n    \"descripcion\" : \"Encuentra al impostor antes de que elimine a toda la tripulacion\",\r\n    \"precio\" : 6.0,\r\n    \"plataforma\" : \"Steam\"\r\n}",
+							"raw": "{\r\n    \"nombre\" : \"Grand Theft Auto V\",\r\n    \"descripcion\" : \"Se trata de una aventura de acción de mundo abierto con multitud de misiones,además cuenta con modo Online.\",\r\n    \"precio\" : 9.89,\r\n    \"plataforma\" : \"Rockstar\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -180,7 +180,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTg3YWM4ZS1lNjIwLTQxYTgtYjkzMC1mYjAyOWYxZTEzNmIiLCJleHAiOjE2MTY0MDM3MjUsImlhdCI6MTYxNjE0NDUyNSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.9A78NmQZJMsD0bNXYQVh0N4CJv6R4ggO4UN4Ns94KLt8xYdf6oKl_XF03dxQmLvXQKPLgslGHVaTgUk92D3HwQ",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NmU4MTM2ZS01ZjFkLTQ5ODctODcwMy0xNTljYTUwNzMwMjAiLCJleHAiOjE2MTY2OTg5OTIsImlhdCI6MTYxNjQzOTc5MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.znhpUuA0Fj651oQpD5Oy1t9SMSMV1KDcSFeTKpIIutRiNEZQGqwptfzEdkKGA_G3zASMvIFaTjAbc3SkVRkPgQ",
 									"type": "string"
 								},
 								{
@@ -348,7 +348,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMjFlNjQ4MS01YWY4LTRmNmUtOGE4Mi0yNTFhMGZiMmYxNmEiLCJleHAiOjE2MTY0MTQwODAsImlhdCI6MTYxNjE1NDg4MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UD_xLhTZ1lQ0QVnY18e9QSAscs1ifO1hY3Kj3IZmZcL7qYOjQc1nYOijHl3DGDzPuWUpAgTZU4uDKSfPY_GGOQ",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -362,7 +362,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"marca\" : \"Intel\",\r\n    \"version\" : \"core i7\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"AMD Athlon 64\",\r\n    \"code\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -396,7 +396,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMjFlNjQ4MS01YWY4LTRmNmUtOGE4Mi0yNTFhMGZiMmYxNmEiLCJleHAiOjE2MTY0MTQwODAsImlhdCI6MTYxNjE1NDg4MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UD_xLhTZ1lQ0QVnY18e9QSAscs1ifO1hY3Kj3IZmZcL7qYOjQc1nYOijHl3DGDzPuWUpAgTZU4uDKSfPY_GGOQ",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -410,7 +410,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"marca\" : \"Intel\",\r\n    \"version\" : \"core i5\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"Intel core 2 duo\",\r\n    \"code\" : 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -444,7 +444,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMjFlNjQ4MS01YWY4LTRmNmUtOGE4Mi0yNTFhMGZiMmYxNmEiLCJleHAiOjE2MTY0MTQwODAsImlhdCI6MTYxNjE1NDg4MCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UD_xLhTZ1lQ0QVnY18e9QSAscs1ifO1hY3Kj3IZmZcL7qYOjQc1nYOijHl3DGDzPuWUpAgTZU4uDKSfPY_GGOQ",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -458,7 +458,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"marca\" : \"AMD\",\r\n    \"version\" : \"Ryzen 5\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"Intel core i3\",\r\n    \"code\" : 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -571,7 +571,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -585,7 +585,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"version\" : \"8GB DDR3\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"4GB DDR2\",\r\n    \"code\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -619,7 +619,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -633,7 +633,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"version\" : \"4GB DDR4\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"4GB DDR3\",\r\n    \"code\" : 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -667,7 +667,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -681,7 +681,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"version\" : \"16GB DDR4\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"6GB DDR2\",\r\n    \"code\" : 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -794,7 +794,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -808,7 +808,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fabricante\" : \"NVIDIA GTX 750 ti\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"NVIDIA GTX 750 ti\",\r\n    \"code\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -842,7 +842,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -856,7 +856,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fabricante\" : \"NVIDIA GTX 1080\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"NVIDIA GTX 770\",\r\n    \"code\" : 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -890,7 +890,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -904,7 +904,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fabricante\" : \"NVIDIA RTX 3080\"\r\n}",
+							"raw": "{\r\n    \"titulo\" : \"NVIDIA GTX 1080\",\r\n    \"code\" : 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -938,7 +938,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxYjFhZjgxMy1lNjI2LTQ5YmQtOWUwYS1lY2M3YTM3NTg2YTQiLCJleHAiOjE2MTY0MTQ5ODIsImlhdCI6MTYxNjE1NTc4MiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.sQPv9Cv3ibJwPXpQM8bpyBXQqDGy0PZok8hQOfj-UQvPt2wSNmRw0I3VA5D0xu8KWq0EJuFAWXJp-faRl9WAIg",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1NTliOTgzNS1kNmIyLTQzZDctYjU2Yy0wYWFlYmNmYTVlNzciLCJleHAiOjE2MTY2OTQ3NjYsImlhdCI6MTYxNjQzNTU2NiwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.UeuglYISj_IOCnDeq4oTGG_YqHwBQOWBkjknWWxQ0EUcRLr58hnG9UBIawf-2LFG82zW5P-oW7a7O2FolXXRKw",
 									"type": "string"
 								},
 								{
@@ -1222,6 +1222,85 @@
 							"path": [
 								"generos",
 								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetUsuarioPorUsername",
+			"item": [
+				{
+					"name": "http://localhost:9000/user/juan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlODg3N2I3OS05YjljLTRkZWYtOGY1Ny05MjQ2MTRkMjk5NjAiLCJleHAiOjE2MTY2MzQzOTMsImlhdCI6MTYxNjM3NTE5MywicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.RLmkhvTK39WMi0xFpkH24yoc2eWIYdpy7fQuQ15Xk7Mzam6L70FJwpavWCv6UzYB2BrMtCIp1NBeWt3hjQadcQ",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/user/juan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"user",
+								"juan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetOrdenadorPorId",
+			"item": [
+				{
+					"name": "http://localhost:9000/ordenadores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4MTRlYzA3ZS0xMWU0LTRiNjMtYTczYy1kOTJmNTc2YWI1YWYiLCJleHAiOjE2MTY5MzA4ODcsImlhdCI6MTYxNjY3MTY4NywicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.gwDhWap58CL6hESmCgem530HL8P_RKsleP2etR49_OpX8ntkClPzE1clrFYgF76W5MO7-QJqNiP3ocbWeItyqA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/ordenadores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"ordenadores"
 							]
 						}
 					},

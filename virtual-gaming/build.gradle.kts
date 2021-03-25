@@ -7,6 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.4.30"
 	kotlin("plugin.jpa") version "1.4.30"
 	kotlin("plugin.allopen") version "1.4.30"
+	id("org.jetbrains.dokka") version "1.4.30"
 }
 
 allOpen {
@@ -21,6 +22,7 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
@@ -45,6 +47,7 @@ dependencies {
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
+	dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.4.30")
 }
 
 tasks.withType<KotlinCompile> {

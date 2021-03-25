@@ -5,6 +5,7 @@ import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.dtos.toSpecificDto
 import com.salesianostriana.dam.virtualgaming.models.Videojuego
 import com.salesianostriana.dam.virtualgaming.services.VideojuegoServicio
+import io.swagger.annotations.Api
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -13,6 +14,7 @@ import javax.validation.Valid
 
 @RestController
 @RequestMapping("/videojuegos")
+@Api("Videojuego")
 class VideojuegoController {
 
     @Autowired
