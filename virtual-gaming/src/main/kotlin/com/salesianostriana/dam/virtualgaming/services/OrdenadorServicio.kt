@@ -29,6 +29,19 @@ class OrdenadorServicio {
     @Autowired
     lateinit var jwt: JwtTokenProvider
 
+    fun getMisOrdenadores(token:String): List<Ordenador>{
+        var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
+                .toTypedArray()[1])).orElseThrow {
+            SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
+                    .toTypedArray()[1]).toString(), Usuario::class.java)
+        }
+        var ordens = ordenadorRepo.findByUsuario(usuario)
+        usuario.ordenadores = ordens
+        usuRepo.save(usuario)
+
+        return usuario.ordenadores
+    }
+
     fun createMiOrdenador(ordenadorNuevo:Ordenador, token:String): ResponseEntity<MisOrdenadoresDTO>{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {

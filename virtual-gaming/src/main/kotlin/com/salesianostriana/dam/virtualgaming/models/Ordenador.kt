@@ -10,16 +10,16 @@ class Ordenador(
         var titulo:String,
 
         @ManyToOne
-        var procesador:Procesador,
+        var procesador:Procesador?,
 
         @ManyToOne
-        var ram:MemoriaRAM,
+        var ram:MemoriaRAM?,
 
         @ManyToOne
-        var grafica:TarjetaGrafica,
+        var grafica:TarjetaGrafica?,
 
         @ManyToOne
-        var usuario:Usuario,
+        var usuario:Usuario?,
 
         @Id @GeneratedValue
         var id:Long?

@@ -9,9 +9,7 @@ import android.view.LayoutInflater
 import androidx.lifecycle.Observer
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.triana.virtual_gaming.R
 import com.triana.virtual_gaming.ui.videojuegoDetails.JuegoDetallesFragment
 import com.triana.virtual_gaming.ui.videojuegoDetails.MiObservable

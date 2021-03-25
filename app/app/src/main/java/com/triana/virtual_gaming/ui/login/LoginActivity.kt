@@ -100,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.i("Token",sharedPref.getString("TOKEN","No existe").toString())
                     Toast.makeText(context,"Login con éxito",Toast.LENGTH_SHORT).show();
                     val intentToViviendas = Intent(context, MainActivity::class.java).apply {
-                        //putExtra(EXTRA_MESSAGE, message)
+                        putExtra("token", response.body()?.token.toString())
                     }
                     startActivity(intentToViviendas)
 

@@ -9,17 +9,17 @@ data class MisOrdenadoresDTO(var id:Long,
                           @get:NotBlank(message="{ordenador.titulo.blank}")
                           var titulo: String,
 
-                          var procesador: ProcesadorDTO,
+                          var procesador: ProcesadorDTO?,
 
-                          var ram: MemoriaRAMDTO,
+                          var ram: MemoriaRAMDTO?,
 
-                          var grafica: TarjetaGraficaDTO
+                          var grafica: TarjetaGraficaDTO?
                       )
 
 fun Ordenador.toDto() = MisOrdenadoresDTO(
         id!!,
         titulo,
-        procesador.toDto(),
-        ram.toDto(),
-        grafica.toDto()
+        procesador!!.toDto(),
+        ram!!.toDto(),
+        grafica!!.toDto()
 )
