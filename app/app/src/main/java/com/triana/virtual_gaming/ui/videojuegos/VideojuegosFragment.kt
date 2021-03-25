@@ -1,5 +1,7 @@
 package com.triana.virtual_gaming.ui.videojuegos
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +13,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.triana.virtual_gaming.R
+import com.triana.virtual_gaming.ui.models.JuegoDetalle
+import com.triana.virtual_gaming.ui.models.UnVideojuego
 import com.triana.virtual_gaming.ui.videojuegoDetails.JuegoDetallesFragment
 import com.triana.virtual_gaming.ui.videojuegoDetails.MiObservable
 
@@ -18,7 +22,7 @@ import com.triana.virtual_gaming.ui.videojuegoDetails.MiObservable
 class VideojuegosFragment : Fragment(){
 
     private lateinit var videojuegosViewModel: VideojuegosViewModel
-    var listaVideojuegos:List<UnVideojuego> = listOf()
+    var listaVideojuegos:List<JuegoDetalle> = listOf()
     lateinit var listaAdapter: MyVideojuegosRecyclerViewAdapter
     private lateinit var miObservable: MiObservable
 
@@ -44,7 +48,7 @@ class VideojuegosFragment : Fragment(){
 
         val v = view as RecyclerView
 
-        listaAdapter = MyVideojuegosRecyclerViewAdapter(listaVideojuegos)
+        listaAdapter = MyVideojuegosRecyclerViewAdapter(activity as Context, listaVideojuegos)
         v.layoutManager = LinearLayoutManager(context)
         v.adapter= listaAdapter
 

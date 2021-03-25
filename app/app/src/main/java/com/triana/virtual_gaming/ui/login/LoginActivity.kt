@@ -99,10 +99,10 @@ class LoginActivity : AppCompatActivity() {
                     }
                     Log.i("Token",sharedPref.getString("TOKEN","No existe").toString())
                     Toast.makeText(context,"Login con éxito",Toast.LENGTH_SHORT).show();
-                    val intentToViviendas = Intent(context, MainActivity::class.java).apply {
+                    val intentTojuegos = Intent(context, MainActivity::class.java).apply {
                         putExtra("token", response.body()?.token.toString())
                     }
-                    startActivity(intentToViviendas)
+                    startActivity(intentTojuegos)
 
                 } else {
                     Log.i("FalloLogin", "Login incorrecto")
@@ -111,8 +111,8 @@ class LoginActivity : AppCompatActivity() {
                 auth = response.body()?.token.toString()
             }
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Log.i("MIGUEL", "Error")
-                Log.i("MIGUEL", t.message.toString())
+                Log.i("Mensaje", "Error")
+                Log.i("Mensaje", t.message.toString())
             }
         })
 

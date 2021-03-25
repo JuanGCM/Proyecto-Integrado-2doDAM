@@ -32,9 +32,54 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="tarjetas_graficas">Tarjetas Graficas:</string>
+    <string name="memoria_ram">Memoria RAM:</string>
+    <string name="proce_sadores">Procesador:</string>
+    <string name="titulo_ordena">Titulo:</string>
+    <string name="nombre_juego">Nombre Juego</string>
+    <string name="plata_juego">Plataforma:</string>
+    <string name="precio_juego">Precio:</string>
     <string name="email">Email</string>
     <string name="nombrecompleto">Nombre Completo</string>
     <string name="fechanacimiento">Fecha de Nacimiento</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="procesadores">
+        <item>Intel core 2 duo</item>
+        <item>Intel core i3</item>
+        <item>AMD Ryzen 3</item>
+        <item>Intel core i5</item>
+        <item>AMD Ryzen 5</item>
+        <item>Intel core i7</item>
+        <item>AMD Ryzen 7</item>
+        <item>Intel core i9</item>
+        <item>AMD Ryzen 9</item>
+    </string-array>
+
+    <string-array name="memorias">
+        <item>6GB DDR2</item>
+        <item>6GB DDR3</item>
+        <item>8GB DDR3</item>
+        <item>8GB DDR4</item>
+        <item>12GB DDR3</item>
+        <item>12GB DDR4</item>
+        <item>16GB DDR3</item>
+        <item>16GB DDR4</item>
+        <item>24GB DDR4</item>
+        <item>24GB DDR5</item>
+    </string-array>
+
+    <string-array name="graficas">
+        <item>NVIDIA GTX 750 ti</item>
+        <item>NVIDIA GTX 780</item>
+        <item>NVIDIA GTX 1050 ti</item>
+        <item>NVIDIA GTX 1080</item>
+        <item>NVIDIA RTX 2060</item>
+        <item>NVIDIA RTX 2070</item>
+        <item>NVIDIA TITAN V</item>
+        <item>NVIDIA TITAN X</item>
+        <item>NVIDIA RTX 3260 ti</item>
+        <item>NVIDIA RTX 3070</item>
+        <item>NVIDIA RTX 3080</item>
+    </string-array>
 </resources>

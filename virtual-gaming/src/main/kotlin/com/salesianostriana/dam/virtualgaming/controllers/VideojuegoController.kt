@@ -19,7 +19,7 @@ class VideojuegoController {
     lateinit var juegoService:VideojuegoServicio
 
     @GetMapping()
-    fun getVideojuegos()=juegoService.findAll().map { it.toDto() }
+    fun getVideojuegos()=juegoService.findAll().map { it.toSpecificDto() }
 
     @RequestMapping("/search")
     fun searchVideojuego(@RequestParam(name = "plat") plataforma:String):ResponseEntity<List<ListadoVideojuegoDTO>> {

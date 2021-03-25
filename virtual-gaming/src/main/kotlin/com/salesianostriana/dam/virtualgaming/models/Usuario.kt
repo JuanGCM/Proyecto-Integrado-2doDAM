@@ -64,6 +64,12 @@ class Usuario(
         this.deseados.add(videojuego)
         videojuego.likes!!.add(this)
     }
+
+    fun addOrdenador(ordenador:Ordenador){
+        this.ordenadores.add(ordenador)
+        ordenador.usuario = this
+    }
+
     fun removeDeseados(videojuego:Videojuego){
         this.deseados.remove(videojuego)
         videojuego.likes!!.remove(this)

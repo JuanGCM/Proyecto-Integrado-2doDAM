@@ -11,17 +11,22 @@
         android:label="@string/title_vacio"
         tools:layout="@layout/fragment_video_game" />
 
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.triana.virtual_gaming.ui.dashboard.DashboardFragment"
-        android:label="@string/title_vacio"
-        tools:layout="@layout/fragment_dashboard" />
+
+
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.triana.virtual_gaming.ui.profile.ProfileFragment"
         android:label="@string/title_vacio"
         tools:layout="@layout/perfil_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.triana.virtual_gaming.ui.dashboard.DashboardFragment"
+        android:label="@string/title_vacio"
+        tools:layout="@layout/fragment_dashboard" />
+
+
 
 
 </navigation>

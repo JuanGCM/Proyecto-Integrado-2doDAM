@@ -2,7 +2,7 @@ package com.triana.virtual_gaming.ui.videojuegoDetails
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.triana.virtual_gaming.ui.videojuegos.UnVideojuego
+import com.triana.virtual_gaming.ui.models.UnVideojuego
 
 open class MiObservable : ViewModel()
 {

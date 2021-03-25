@@ -1,4 +1,4 @@
-package com.triana.virtual_gaming.ui.videojuegos
+package com.triana.virtual_gaming.ui.models
 
 data class UnVideojuego (
         val id:Int,

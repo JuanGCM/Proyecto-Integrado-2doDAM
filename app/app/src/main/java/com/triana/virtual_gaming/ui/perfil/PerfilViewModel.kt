@@ -32,7 +32,7 @@ class PerfilViewModel : ViewModel() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         service = retrofitUsuario.create(VideojuegoServicio::class.java)
-        getUser("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0NTZlZWZmOC0zYzhmLTQ3MzYtOTJhMC1mMzgwNmU1ZmQzNDkiLCJleHAiOjE2MTY2Mjc5MzgsImlhdCI6MTYxNjM2ODczOCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiSnVhbiBHdWlsbGVybW8gQ2hhdmV6IE1hcmVuZ28iLCJyb2xlcyI6IlVTRVIifQ.V3nBh2t189yCEnEF5TFr3e4VT98qcwCIhq8PaE4CNB5kF9jRtCV8a1YDIU9O-P93oVXvcCBnBzukvHO5rrNT1g")
+        getUser("")
     }
 
     fun getUser(token:String){

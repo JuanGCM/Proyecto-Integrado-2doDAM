@@ -44,7 +44,7 @@ class WebSecurityConfiguration(private val userDetailsService: UserDetailsServic
                         "/videojuegos?plat=**",
                         "/videojuegos/{id}",
                         "/videojuegos/{id}?cd1=**?cd2=**?cd3=**").permitAll()
-                .antMatchers(POST,"/videojuegos","/videojuego/{idV}/img").hasRole("USER")
+                .antMatchers(POST,"/videojuegos","/videojuego/{idV}/img","/ordenadores").hasRole("USER")
                 .antMatchers(GET, "/videojuegos/favs").hasRole("USER")
                 .antMatchers(PUT, "/videojuegos/{id}").hasRole("USER")
                 .antMatchers(DELETE, "/videojuegos/{id}","videojuego/{id}/img/{hash}").hasRole("USER")

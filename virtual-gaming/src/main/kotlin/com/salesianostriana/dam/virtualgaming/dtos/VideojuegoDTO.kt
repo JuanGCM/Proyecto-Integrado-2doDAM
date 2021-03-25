@@ -39,9 +39,9 @@ data class UnVideojuegoDTO(var id:Long,
 
                           var minTarjetaGrafica:TarjetaGraficaDTO?,
 
-                          var minMemoriaRAM:MemoriaRAMDTO?,
+                          var minMemoriaRAM:MemoriaRAMDTO?)
 
-                          var imagenes: List<ImagenDTO>?)
+                          //var imagenes: List<ImagenDTO>?)
 
 
 fun Videojuego.toDto() = ListadoVideojuegoDTO(
@@ -61,6 +61,6 @@ fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
         //generoJuegos!!.map { it.toDto() },
         minProcesador!!.toDto(),
         minTarjetaGrafica!!.toDto(),
-        minMemoriaRAM!!.toDto(),
-        imagenes!!.map { it.toDto() }
-)
+        minMemoriaRAM!!.toDto())
+        //imagenes!!.map { it.toDto() }
+//)

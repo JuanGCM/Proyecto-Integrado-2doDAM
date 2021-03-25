@@ -42,7 +42,7 @@ class OrdenadorServicio {
         return usuario.ordenadores
     }
 
-    fun createMiOrdenador(ordenadorNuevo:Ordenador, token:String): ResponseEntity<MisOrdenadoresDTO>{
+    fun createMiOrdenador(ordenadorNuevo:Ordenador, token:String): Ordenador{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
@@ -51,20 +51,14 @@ class OrdenadorServicio {
 
         var ordenador = ordenadorRepo.save(ordenadorNuevo)
 
+        usuario.addOrdenador(ordenador)
 
-        ordenadorRepo.save(ordenador)
-        usuario.ordenadores.add(ordenador)
         usuRepo.save(usuario)
-        return ResponseEntity.status(HttpStatus.CREATED).body(ordenador.toDto())
-    }
-
-    fun createRequisitoJuego(ordenadorNuevo: Ordenador):Ordenador{
-
-        var ordenador = ordenadorRepo.save(ordenadorNuevo)
         ordenadorRepo.save(ordenador)
 
         return ordenador
     }
+
 
     fun modifyOrdenador(id: Long, ordenadorNuevo: Ordenador): ResponseEntity<MisOrdenadoresDTO> = ordenadorRepo.findById(id)
             .map { ordenadorAModificar ->
