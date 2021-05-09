@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VirtualGaming"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ordenador.OrdenadorActivity"></activity>
+        <activity android:name=".ui.EditPerfil.EditPerfilActivity"></activity>
+        <activity android:name=".ui.miPerfil.MiPerfilActivity" />
+        <activity android:name=".ui.ordenador.OrdenadorActivity" />
         <activity android:name=".ui.videojuegoDetalles.VideojuegoDetailsActivity" />
         <activity
             android:name=".ui.registro.RegisterActivity"

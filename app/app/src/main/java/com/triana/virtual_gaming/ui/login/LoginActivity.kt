@@ -26,8 +26,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class LoginActivity : AppCompatActivity() {
 
-
-    //private lateinit var loginViewModel: LoginViewModel
     lateinit var retrofit: Retrofit
     lateinit var service: LoginService
     var context  = this
@@ -60,14 +58,6 @@ class LoginActivity : AppCompatActivity() {
         login.setOnClickListener(View.OnClickListener {
             auth = doLogin()
         })
-/*
-        val bundle = Bundle()
-        bundle.putString("token", auth)
-        intent = Intent(this@LoginActivity,PerfilViewModel::class.java)
-        intent.putExtras(bundle)
-        startActivity(intent)
-
- */
 
         toregister.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, RegisterActivity::class.java).apply {
@@ -75,7 +65,6 @@ class LoginActivity : AppCompatActivity() {
             }
             startActivity(intent)
         })
-
     }
 
     fun doLogin(): String {
@@ -101,6 +90,8 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(context,"Login con éxito",Toast.LENGTH_SHORT).show();
                     val intentTojuegos = Intent(context, MainActivity::class.java).apply {
                         putExtra("token", response.body()?.token.toString())
+                        putExtra("idusu", response.body()?.user?.id.toString())
+                        putExtra("username", username.text.toString())
                     }
                     startActivity(intentTojuegos)
 

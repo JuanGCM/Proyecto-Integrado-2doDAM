@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.virtualgaming.controllers
 
+import com.salesianostriana.dam.virtualgaming.dtos.DtoUserEdit
 import com.salesianostriana.dam.virtualgaming.dtos.UsuarioDTO
 import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.models.Usuario
@@ -31,5 +32,9 @@ class UsuarioController(
     fun getUsuarioPorUsername(@PathVariable username: String):ResponseEntity<UsuarioDTO> {
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioServicio.findByUsuario(username).toDto())
     }
+
+    @PutMapping()
+    fun modifyUsuario(@RequestHeader("Authorization") token:String,@Valid @RequestBody usuNuevo: DtoUserEdit)=
+            usuarioServicio.modifyUsuario(token, usuNuevo)
 
 }

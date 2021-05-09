@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.triana.virtual_gaming.ui.models.JuegoDetalle
-import com.triana.virtual_gaming.ui.models.UnVideojuego
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

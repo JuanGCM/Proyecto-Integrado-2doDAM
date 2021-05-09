@@ -12,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ProfileViewModel : ViewModel() {
+class ProfileViewModel() : ViewModel() {
     // TODO: Implement the ViewModel
 
     private val _usuario = MutableLiveData<User>()
@@ -30,7 +30,7 @@ class ProfileViewModel : ViewModel() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         service = retrofitUsuario.create(VideojuegoServicio::class.java)
-        getUser("juan")
+        getUser("manu")
 
     }
 

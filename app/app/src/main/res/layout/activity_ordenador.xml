@@ -37,7 +37,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/titulo_ordenador"
+                android:id="@+id/newpc_titulo"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:textSize="18dp" />
@@ -75,7 +75,7 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/procesadores"
+                android:id="@+id/newpc_proce"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content" />
 
@@ -105,7 +105,7 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/memorias"
+                android:id="@+id/newpc_mem"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content" />
 
@@ -133,7 +133,7 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/graficas"
+                android:id="@+id/newpc_graf"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content" />
 
@@ -153,12 +153,20 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/envia_ordenador"
+                android:id="@+id/newpc_guardar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_buttom"
                 android:text="Guardar" />
+            <Button
+                android:id="@+id/newpc_volver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edit_buttom"
+                android:text="Volver" />
         </LinearLayout>
 
     </LinearLayout>

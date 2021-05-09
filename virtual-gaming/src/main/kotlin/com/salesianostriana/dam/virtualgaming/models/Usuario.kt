@@ -3,6 +3,7 @@ package com.salesianostriana.dam.virtualgaming.models
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
+import java.time.LocalDate
 import java.util.*
 import javax.persistence.*
 import javax.validation.constraints.Email
@@ -27,8 +28,7 @@ class Usuario(
         @get:Email(message="{usuario.email.email}")
         var email:String,
 
-        @get:Past(message="{usuario.fechanacimiento.date}")
-        var fechaNacimiento:Date,
+        var fechaNacimiento:LocalDate,
 
         @ElementCollection(fetch = FetchType.EAGER)
         val roles: MutableSet<String> = HashSet(),
@@ -53,7 +53,7 @@ class Usuario(
 ):UserDetails{
 
     constructor(nombreCompleto: String,username: String,password: String,
-                email: String, fechaNacimiento: Date, rol:String):this(
+                email: String, fechaNacimiento:LocalDate, rol:String):this(
                 nombreCompleto,username, password,email,fechaNacimiento,
                 mutableSetOf(rol),mutableListOf<Videojuego>(), mutableListOf<Ordenador>(),
             true,true,true,true

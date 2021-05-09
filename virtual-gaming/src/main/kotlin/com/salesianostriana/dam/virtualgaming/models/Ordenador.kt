@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.virtualgaming.models
 
+import java.time.LocalDate
+import java.util.*
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
 
@@ -22,9 +24,10 @@ class Ordenador(
         var usuario:Usuario?,
 
         @Id @GeneratedValue
-        var id:Long?
+        var id: UUID?= null
 
 ){
+
         override fun equals(other: Any?): Boolean {
                 if (this === other) return true
                 if (other == null || javaClass != other.javaClass) return false

@@ -1,8 +1,6 @@
 package com.salesianostriana.dam.virtualgaming.controllers
 
-import com.salesianostriana.dam.virtualgaming.dtos.ListadoVideojuegoDTO
-import com.salesianostriana.dam.virtualgaming.dtos.MisOrdenadoresDTO
-import com.salesianostriana.dam.virtualgaming.dtos.toDto
+import com.salesianostriana.dam.virtualgaming.dtos.*
 import com.salesianostriana.dam.virtualgaming.models.Ordenador
 import com.salesianostriana.dam.virtualgaming.models.Videojuego
 import com.salesianostriana.dam.virtualgaming.services.OrdenadorServicio
@@ -10,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import java.util.*
 import javax.validation.Valid
 
 @RestController
@@ -24,7 +23,7 @@ class OrdenadorController {
             ordeService.getMisOrdenadores(token).map { it.toDto() }
 
     @PostMapping()
-    fun createOrdenador(@Valid @RequestBody ordenador: Ordenador,
+    fun createOrdenador(@Valid @RequestBody ordenador: MiOrdenador,
                         @RequestHeader("Authorization") token:String) : ResponseEntity<MisOrdenadoresDTO> {
         return ResponseEntity.status(HttpStatus.CREATED).body(ordeService.createMiOrdenador(ordenador,token).toDto())
     }

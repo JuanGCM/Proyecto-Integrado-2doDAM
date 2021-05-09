@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.virtualgaming.services
 
+import com.salesianostriana.dam.virtualgaming.dtos.MiOrdenador
 import com.salesianostriana.dam.virtualgaming.dtos.MisOrdenadoresDTO
 import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.errors.SingleEntityNotFoundException
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
+import java.util.*
 
 @Service
 class OrdenadorServicio {
@@ -42,21 +44,18 @@ class OrdenadorServicio {
         return usuario.ordenadores
     }
 
-    fun createMiOrdenador(ordenadorNuevo:Ordenador, token:String): Ordenador{
+    fun createMiOrdenador(ordenador: MiOrdenador, token:String): Ordenador{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
-
-        var ordenador = ordenadorRepo.save(ordenadorNuevo)
-
-        usuario.addOrdenador(ordenador)
-
+        var ordena = Ordenador(ordenador.titulo,ordenador.procesador,ordenador.ram,ordenador.grafica,usuario)
+        ordenadorRepo.save(ordena)
+        usuario.addOrdenador(ordena)
         usuRepo.save(usuario)
-        ordenadorRepo.save(ordenador)
 
-        return ordenador
+        return ordena
     }
 
 
@@ -70,6 +69,7 @@ class OrdenadorServicio {
             }.orElseThrow {
                 SingleEntityNotFoundException(id.toString(),Ordenador::class.java)
    }
+
 
     fun deleteOrdenador(id:Long):ResponseEntity<Any>{
         if(ordenadorRepo.existsById(id)){
