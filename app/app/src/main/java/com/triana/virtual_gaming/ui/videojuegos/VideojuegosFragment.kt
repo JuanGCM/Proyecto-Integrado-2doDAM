@@ -1,6 +1,5 @@
 package com.triana.virtual_gaming.ui.videojuegos
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -14,7 +13,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.triana.virtual_gaming.R
 import com.triana.virtual_gaming.ui.models.JuegoDetalle
-import com.triana.virtual_gaming.ui.models.UnVideojuego
 import com.triana.virtual_gaming.ui.videojuegoDetails.JuegoDetallesFragment
 import com.triana.virtual_gaming.ui.videojuegoDetails.MiObservable
 
@@ -24,9 +22,6 @@ class VideojuegosFragment : Fragment(){
     private lateinit var videojuegosViewModel: VideojuegosViewModel
     var listaVideojuegos:List<JuegoDetalle> = listOf()
     lateinit var listaAdapter: MyVideojuegosRecyclerViewAdapter
-    private lateinit var miObservable: MiObservable
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,10 +33,6 @@ class VideojuegosFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_videojuego_list, container, false)
-
-        miObservable = activity?.run {
-            ViewModelProvider(this).get(MiObservable::class.java)
-        } ?: throw Exception("Invalid Activity")
 
         videojuegosViewModel =
                 ViewModelProvider(this).get(VideojuegosViewModel::class.java)

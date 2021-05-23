@@ -24,7 +24,7 @@ class Ordenador(
         var usuario:Usuario?,
 
         @Id @GeneratedValue
-        var id: UUID?= null
+        var id: Long? = null
 
 ){
 

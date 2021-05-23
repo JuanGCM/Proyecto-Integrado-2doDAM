@@ -6,9 +6,7 @@ import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.errors.SingleEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.models.Ordenador
 import com.salesianostriana.dam.virtualgaming.models.Usuario
-import com.salesianostriana.dam.virtualgaming.repositories.OrdenadorRepository
-import com.salesianostriana.dam.virtualgaming.repositories.UsuarioRepository
-import com.salesianostriana.dam.virtualgaming.repositories.VideojuegoRepository
+import com.salesianostriana.dam.virtualgaming.repositories.*
 import com.salesianostriana.dam.virtualgaming.security.JwtTokenProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -17,7 +15,7 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class OrdenadorServicio {
+class OrdenadorServicio: BaseService<Ordenador, Long, OrdenadorRepository>() {
 
     @Autowired
     lateinit var ordenadorRepo:OrdenadorRepository
@@ -29,6 +27,15 @@ class OrdenadorServicio {
     lateinit var juegoRepo:VideojuegoRepository
 
     @Autowired
+    lateinit var proceRepo:ProcesadorRepository
+
+    @Autowired
+    lateinit var memoriaRepo:MemoriaRAMRepository
+
+    @Autowired
+    lateinit var graficaRepo:TarjetaGraficaRepository
+
+    @Autowired
     lateinit var jwt: JwtTokenProvider
 
     fun getMisOrdenadores(token:String): List<Ordenador>{
@@ -37,22 +44,40 @@ class OrdenadorServicio {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
-        var ordens = ordenadorRepo.findByUsuario(usuario)
-        usuario.ordenadores = ordens
-        usuRepo.save(usuario)
-
         return usuario.ordenadores
     }
-
+/*
     fun createMiOrdenador(ordenador: MiOrdenador, token:String): Ordenador{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
             SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
                     .toTypedArray()[1]).toString(), Usuario::class.java)
         }
+
         var ordena = Ordenador(ordenador.titulo,ordenador.procesador,ordenador.ram,ordenador.grafica,usuario)
-        ordenadorRepo.save(ordena)
-        usuario.addOrdenador(ordena)
+        this.save(ordena)
+
+        usuario.ordenadores.add(ordenadorRepo.findByUsuario(usuario))
+        usuRepo.save(usuario)
+
+        return ordena
+    }
+*/
+    fun createPC(ordenador:String, token: String):Ordenador{
+        var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
+                .toTypedArray()[1])).orElseThrow {
+            SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
+                    .toTypedArray()[1]).toString(), Usuario::class.java)
+        }
+        var titulo = ordenador.split(",")[0]
+        var procesador = proceRepo.findByCode(ordenador.split(",")[1].toInt())
+        var ram = memoriaRepo.findByCode(ordenador.split(",")[2].toInt())
+        var grafica = graficaRepo.findByCode(ordenador.split(",")[3].toInt())
+
+        var ordena = Ordenador(titulo,procesador,ram,grafica,usuario)
+        this.save(ordena)
+
+        usuario.ordenadores.add(ordenadorRepo.findByTitulo(titulo))
         usuRepo.save(usuario)
 
         return ordena

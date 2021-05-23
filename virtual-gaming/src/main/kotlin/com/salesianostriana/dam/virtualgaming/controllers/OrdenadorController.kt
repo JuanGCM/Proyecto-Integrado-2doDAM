@@ -21,10 +21,20 @@ class OrdenadorController {
     @GetMapping()
     fun getOrdenadores(@RequestHeader("Authorization") token:String) =
             ordeService.getMisOrdenadores(token).map { it.toDto() }
-
+/*
     @PostMapping()
     fun createOrdenador(@Valid @RequestBody ordenador: MiOrdenador,
                         @RequestHeader("Authorization") token:String) : ResponseEntity<MisOrdenadoresDTO> {
         return ResponseEntity.status(HttpStatus.CREATED).body(ordeService.createMiOrdenador(ordenador,token).toDto())
     }
+*/
+    @PostMapping("/{pc}")
+    fun createPC(@PathVariable pc:String,
+                        @RequestHeader("Authorization") token:String) : ResponseEntity<MisOrdenadoresDTO> {
+        return ResponseEntity.status(HttpStatus.CREATED).body(ordeService.createPC(pc,token).toDto())
+    }
+
+    @DeleteMapping("/{id}")
+    fun deleteOrdenador(@PathVariable id: Long) =
+            ordeService.deleteOrdenador(id)
 }

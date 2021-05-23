@@ -21,10 +21,13 @@ import com.triana.virtual_gaming.ui.ordenador.OrdenadorActivity
 class MainActivity : AppCompatActivity() {
 
     lateinit var pc: FloatingActionButton
-    lateinit var token:String
-    lateinit var username:String
-    lateinit var idusu:String
+
     lateinit var perfilBot:Button
+    companion object {
+        lateinit var token: String
+        lateinit var username:String
+        lateinit var idusu:String
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +59,10 @@ class MainActivity : AppCompatActivity() {
 
         pc.setOnClickListener{
             val intent = Intent(this, OrdenadorActivity::class.java).apply {
-                //*CAMBIOS>
                 putExtra("token", token)
-                //*CAMBIOS<
+                putExtra("username",username)
+                putExtra("idusu",idusu)
+
             }
             startActivity(intent)
         }

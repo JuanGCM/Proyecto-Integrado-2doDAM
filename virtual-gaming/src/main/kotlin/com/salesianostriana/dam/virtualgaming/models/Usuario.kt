@@ -36,7 +36,7 @@ class Usuario(
         @ManyToMany(mappedBy = "likes")
         var deseados:MutableList<Videojuego> = mutableListOf(),
 
-        @OneToMany(mappedBy = "usuario")
+        @OneToMany(fetch = FetchType.EAGER,mappedBy = "usuario")
         var ordenadores:MutableList<Ordenador> = mutableListOf(),
 
         private val nonExpired: Boolean = true,
@@ -67,7 +67,10 @@ class Usuario(
 
     fun addOrdenador(ordenador:Ordenador){
         this.ordenadores.add(ordenador)
-        ordenador.usuario = this
+    }
+
+    fun removeOrdenador(ordenador:Ordenador){
+        this.ordenadores.remove(ordenador)
     }
 
     fun removeDeseados(videojuego:Videojuego){

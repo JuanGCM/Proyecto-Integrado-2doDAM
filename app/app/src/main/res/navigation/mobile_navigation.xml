@@ -16,9 +16,9 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.triana.virtual_gaming.ui.profile.ProfileFragment"
+        android:name="com.triana.virtual_gaming.ui.ordenadores.OrdenadoresFragment"
         android:label="@string/title_vacio"
-        tools:layout="@layout/perfil_fragment" />
+        tools:layout="@layout/fragment_ordenadores_list" />
 
     <fragment
         android:id="@+id/navigation_dashboard"

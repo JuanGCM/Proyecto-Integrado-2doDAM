@@ -7,6 +7,7 @@
     <string name="title_vacio"> </string>
     <string name="title_notifications">Notifications</string>
     <string name="title_perfil">Perfil</string>
+    <string name="title_ordenadores">Ordenadores</string>
     <string name="title_salir">Salir</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>

@@ -1,10 +1,7 @@
 package com.triana.virtual_gaming.ui.videojuegos
 
 import com.triana.virtual_gaming.ui.login.User
-import com.triana.virtual_gaming.ui.models.DtoUserEdit
-import com.triana.virtual_gaming.ui.models.JuegoDetalle
-import com.triana.virtual_gaming.ui.models.Procesador
-import com.triana.virtual_gaming.ui.models.UnVideojuego
+import com.triana.virtual_gaming.ui.models.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -21,6 +18,15 @@ interface VideojuegoServicio{
 
     @GET("/procesadores")
     fun getProcesadores(@Header("Authorization") token: String):Call<List<Procesador>>
+
+    @POST("/ordenadores/{pc}")
+    fun createOrdenador(@Path("pc") pc:String, @Header("Authorization") token: String):Call<Ordenador>
+
+     @GET("/ordenadores")
+     fun getOrdenadores(@Header("Authorization") token: String):Call<List<Ordenador>>
+
+    @DELETE("/ordenadores/{id}")
+    fun eliminarOrdenador(@Path("id")id:Long):Call<Ordenador>
     /*
     @GET("/viviendas/mine")
     fun getMyViviendas(@Header("Authorization") auth:String): Call<List<MyViviendasItem>>

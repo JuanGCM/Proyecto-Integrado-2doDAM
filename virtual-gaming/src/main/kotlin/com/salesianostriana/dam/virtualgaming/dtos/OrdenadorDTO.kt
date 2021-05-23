@@ -9,10 +9,9 @@ import java.util.*
 import javax.validation.constraints.NotBlank
 
 
-data class MisOrdenadoresDTO(var id: UUID,
+data class MisOrdenadoresDTO(var id: Long,
 
-                             @get:NotBlank(message="{ordenador.titulo.blank}")
-                          var titulo: String,
+                             var titulo: String,
 
                              var procesador: ProcesadorDTO?,
 
