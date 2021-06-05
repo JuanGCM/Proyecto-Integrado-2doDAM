@@ -158,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_buttom"
-                android:text="Guardar" />
+                android:text="@string/guardar" />
             <Button
                 android:id="@+id/newpc_volver"
                 android:layout_width="wrap_content"
@@ -166,7 +166,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_buttom"
-                android:text="Volver" />
+                android:text="@string/volver" />
         </LinearLayout>
 
     </LinearLayout>

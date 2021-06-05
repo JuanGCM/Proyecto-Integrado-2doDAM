@@ -2,21 +2,18 @@ package com.triana.virtual_gaming.ui.login
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
+import android.widget.ImageView
 import android.widget.Toast
-import com.triana.virtual_gaming.ui.login.LoginRequest
-import com.triana.virtual_gaming.ui.login.LoginResponse
-import com.triana.virtual_gaming.ui.login.LoginService
+import androidx.appcompat.app.AppCompatActivity
 import com.triana.virtual_gaming.MainActivity
-
 import com.triana.virtual_gaming.R
-import com.triana.virtual_gaming.ui.perfil.PerfilViewModel
 import com.triana.virtual_gaming.ui.registro.RegisterActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,13 +21,13 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 class LoginActivity : AppCompatActivity() {
 
     lateinit var retrofit: Retrofit
     lateinit var service: LoginService
     var context  = this
     val baseUrl = "http://10.0.2.2:9000"
-
     lateinit var username: EditText
     lateinit var password: EditText
     lateinit var login: Button
@@ -57,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
 
         login.setOnClickListener(View.OnClickListener {
             auth = doLogin()
+
         })
 
         toregister.setOnClickListener(View.OnClickListener {
@@ -64,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                 //putExtra(EXTRA_MESSAGE, message)
             }
             startActivity(intent)
+
         })
     }
 

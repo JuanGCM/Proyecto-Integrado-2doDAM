@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.comparaPc.ComparaActivity">
+    <Button
+        android:id="@+id/comp_volver"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:text="@string/volver"
+        android:layout_marginLeft="260dp"/>
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.triana.virtual_gaming.ui.comparaPc.ComparacionFragment"
+        android:layout_width="match_parent"
+        android:layout_height="660dp"
+        android:layout_marginTop="50dp"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="235dp" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

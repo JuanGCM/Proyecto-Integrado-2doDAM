@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.triana.virtual_gaming.MainActivity
 import com.triana.virtual_gaming.R
+import com.triana.virtual_gaming.ui.editaOrdenador.EditaOrdenadorActivity
 import com.triana.virtual_gaming.ui.models.Ordenador
 import com.triana.virtual_gaming.ui.videojuegos.VideojuegoServicio
 import retrofit2.Call
@@ -23,9 +24,7 @@ class OrdenadorDetalleActivity : AppCompatActivity() {
     lateinit var graf: TextView
     lateinit var editar:Button
     lateinit var eliminar:Button
-    lateinit var token:String
-    lateinit var username:String
-    lateinit var idusu:String
+    lateinit var volver:Button
     private val baseUrl = "http://10.0.2.2:9000"
     private lateinit var service: VideojuegoServicio
 
@@ -39,19 +38,54 @@ class OrdenadorDetalleActivity : AppCompatActivity() {
         graf = findViewById(R.id.det_graf)
         editar = findViewById(R.id.det_editar)
         eliminar = findViewById(R.id.det_eliminar)
+        volver = findViewById(R.id.det_volver)
 
         var intent: Intent = getIntent()
-        tit.text = intent.getStringExtra("titulo")
-        proc.text = intent.getStringExtra("procesador")
-        mem.text = intent.getStringExtra("ram")
-        graf.text = intent.getStringExtra("grafica")
-        token = intent.getStringExtra("token")!!
-        username = intent.getStringExtra("username")!!
-        idusu = intent.getStringExtra("idusu")!!
+        var titulo =  intent.getStringExtra("titulo")
+        var procesador = intent.getStringExtra("procesador")
+        var ram = intent.getStringExtra("ram")
+        var grafica = intent.getStringExtra("grafica")
+        tit.text = titulo
+        proc.text = procesador
+        mem.text = ram
+        graf.text = grafica
+        var proce_code = intent.getStringExtra("procesadorcode")
+        var ram_code = intent.getStringExtra("ramcode")
+        var graf_code = intent.getStringExtra("graficacode")
+        var token = intent.getStringExtra("token")!!
+        var username = intent.getStringExtra("username")!!
+        var idusu = intent.getStringExtra("idusu")!!
         var id:Long = intent.getStringExtra("id")!!.toLong()
 
         eliminar.setOnClickListener {
             eliminarOrdenador(id)
+            val inte = Intent(this, MainActivity::class.java).apply {
+                putExtra("token",token)
+                putExtra("username",username)
+                putExtra("idusu",idusu)
+            }
+            startActivity(inte)
+        }
+
+        editar.setOnClickListener {
+            val inte = Intent(this, EditaOrdenadorActivity::class.java).apply {
+                putExtra("titulo", tit.text.toString())
+                putExtra("token",token)
+                putExtra("username",username)
+                putExtra("idusu",idusu)
+                putExtra("procesadorcode",proce_code)
+                putExtra("ramcode",ram_code)
+                putExtra("graficacode",graf_code)
+                putExtra("titulo",titulo)
+                putExtra("procesador",procesador)
+                putExtra("ram",ram)
+                putExtra("grafica",grafica)
+                putExtra("id",id.toString())
+            }
+            startActivity(inte)
+        }
+
+        volver.setOnClickListener {
             val inte = Intent(this, MainActivity::class.java).apply {
                 putExtra("token",token)
                 putExtra("username",username)

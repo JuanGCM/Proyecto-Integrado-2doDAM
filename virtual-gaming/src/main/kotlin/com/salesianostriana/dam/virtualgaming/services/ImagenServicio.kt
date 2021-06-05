@@ -29,7 +29,6 @@ class ImagenServicio (
             }
             if(imageAttribute != null){
                 e.img!!.id = imageStorageService.loadAsResource(imageAttribute.get().id!!).get().uri.toString()
-                //e.img!!.id = imageAttribute.get().id
                 e.img!!.deletehash = imageAttribute.get().deletehash
             }
             return save(e)

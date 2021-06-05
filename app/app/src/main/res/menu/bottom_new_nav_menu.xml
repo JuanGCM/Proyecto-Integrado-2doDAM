@@ -6,8 +6,8 @@
         android:icon="@drawable/ic_juegos"/>
 
     <item android:id="@+id/navigation_dashboard"
-        android:title="@string/title_buscar"
-        android:icon="@drawable/ic_buscar"/>
+        android:title="@string/favorito"
+        android:icon="@drawable/ic_favorito"/>
 
     <item android:id="@+id/placeholder"
         android:title=""/>
@@ -16,7 +16,7 @@
         android:title="@string/title_ordenadores"
         android:icon="@drawable/ic_ordenador"/>
 
-    <item android:id="@+id/Salir"
+    <item android:id="@+id/main_salir"
         android:title="@string/title_salir"
         android:icon="@drawable/ic_cerrar_sesion"/>
 

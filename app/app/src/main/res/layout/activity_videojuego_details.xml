@@ -11,6 +11,31 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/megusta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/edit_buttom"
+                android:drawableLeft="@drawable/ic_favorito"
+                android:text="@string/megusta" />
+
+            <Button
+                android:id="@+id/nomegusta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_favorito"
+                android:text="@string/nomegusta" />
+
+        </FrameLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="248dp"
@@ -21,6 +46,7 @@
             android:paddingRight="15dp">
 
             <ImageView
+                android:id="@+id/juego_img"
                 android:layout_width="180dp"
                 android:layout_height="220dp"
                 android:src="@drawable/ic_person" />
@@ -46,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-65dp"
                     android:layout_marginRight="5dp"
-                    android:text="Descripcion del Juego......................................................."
+                    android:text="@string/descripcion_juego"
                     android:textColor="@color/white"
                     android:textSize="12dp" />
 
@@ -63,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
-                    android:text="Steam"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="15dp" />
 
@@ -80,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="85dp"
-                    android:text="22.00 €"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="28dp" />
             </LinearLayout>
@@ -95,7 +121,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="295dp"
+            android:layout_height="244dp"
             android:layout_marginTop="20dp"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -103,21 +129,37 @@
             android:paddingRight="15dp">
 
             <TextView
-                android:id="@+id/proce_detalle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
+                android:text="@string/requisitos"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/proce_sadores"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/proce_detalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text=""
+                    android:textSize="18dp" />
+            </LinearLayout>
+
 
             <View
                 android:layout_width="match_parent"
@@ -127,30 +169,31 @@
                 android:layout_marginRight="15dp"
                 android:background="@color/white" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
-            <TextView
-                android:id="@+id/ram_detalle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/memoria_ram"
+                    android:textSize="20dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/ram_detalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text=""
+                    android:textSize="18dp" />
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -160,38 +203,40 @@
                 android:layout_marginRight="15dp"
                 android:background="@color/white" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/graf_detalle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/white" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/tarjetas_graficas"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/graf_detalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text=""
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text=""
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -202,6 +247,20 @@
 
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/descrip_juego_comparar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/comparar" />
+
+        <Button
+            android:id="@+id/descrip_juego_volver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/volver" />
 
     </LinearLayout>
 

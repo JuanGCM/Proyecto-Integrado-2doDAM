@@ -6,6 +6,7 @@ data class JuegoDetalle (
         val descripcion:String,
         val precio:Double,
         val plataforma:String,
+        val img:String,
         val minProcesador:Procesador,
         val minMemoriaRAM:MemoriaRAM,
         val minTarjetaGrafica:TarjetaGrafica

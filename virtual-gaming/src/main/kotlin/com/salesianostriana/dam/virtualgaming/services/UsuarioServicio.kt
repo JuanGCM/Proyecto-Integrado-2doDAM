@@ -5,6 +5,7 @@ import com.salesianostriana.dam.virtualgaming.dtos.UsuarioDTO
 import com.salesianostriana.dam.virtualgaming.dtos.toDto
 import com.salesianostriana.dam.virtualgaming.errors.SingleEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.models.Usuario
+import com.salesianostriana.dam.virtualgaming.models.Videojuego
 import com.salesianostriana.dam.virtualgaming.repositories.UsuarioRepository
 import com.salesianostriana.dam.virtualgaming.security.JwtTokenProvider
 import org.springframework.beans.factory.annotation.Autowired
@@ -58,6 +59,14 @@ class UsuarioServicio {
 
     fun findByUsuario(username:String) = usuRepo.findByUsername(username).orElseThrow {
             SingleEntityNotFoundException(username,Usuario::class.java)
+    }
+
+    fun getJuegosFavoritos(token:String):List<Videojuego> {
+        var idUsuario = jwt.getUserIdFromJWT(token.split(" ").toTypedArray()[1])
+        var usuario = usuRepo.findById(idUsuario).orElseThrow {
+            SingleEntityNotFoundException(idUsuario.toString(),Usuario::class.java)
+        }
+        return usuario.deseados
     }
 
     fun modifyUsuario(token:String, usuNuevo: DtoUserEdit): ResponseEntity<UsuarioDTO> =

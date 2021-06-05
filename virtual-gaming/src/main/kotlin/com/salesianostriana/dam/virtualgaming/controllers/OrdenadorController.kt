@@ -34,6 +34,10 @@ class OrdenadorController {
         return ResponseEntity.status(HttpStatus.CREATED).body(ordeService.createPC(pc,token).toDto())
     }
 
+    @PutMapping("/{pc}")
+    fun modifyOrdenador(@PathVariable pc:String)=
+            ordeService.modifyOrdenador(pc)
+
     @DeleteMapping("/{id}")
     fun deleteOrdenador(@PathVariable id: Long) =
             ordeService.deleteOrdenador(id)

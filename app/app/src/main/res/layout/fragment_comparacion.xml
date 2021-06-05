@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="410dp"
+    android:layout_height="160dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/comp_esApto"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        android:textColor="@color/rojo_claro"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/comp_graf"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/comp_req_graf"
+        app:layout_constraintTop_toBottomOf="@+id/comp_graf" />
+
+    <TextView
+        android:id="@+id/comp_req_proce"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/comp_req"
+        app:layout_constraintTop_toBottomOf="@+id/comp_req" />
+
+    <TextView
+        android:id="@+id/comp_req_ram"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/comp_req_proce"
+        app:layout_constraintTop_toBottomOf="@+id/comp_req_proce" />
+
+    <TextView
+        android:id="@+id/comp_req_graf"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/comp_req_ram"
+        app:layout_constraintTop_toBottomOf="@+id/comp_req_ram" />
+
+    <TextView
+        android:id="@+id/comp_req"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Requisitos:"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/comp_graf"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/comp_ram"
+        app:layout_constraintTop_toBottomOf="@+id/comp_ram" />
+
+    <TextView
+        android:id="@+id/comp_ram"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/comp_proce"
+        app:layout_constraintTop_toBottomOf="@+id/comp_proce" />
+
+    <TextView
+        android:id="@+id/comp_proce"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/comp_titulo"
+        app:layout_constraintTop_toBottomOf="@+id/comp_titulo" />
+
+    <TextView
+        android:id="@+id/comp_titulo"
+        android:layout_width="160dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/comp_req"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

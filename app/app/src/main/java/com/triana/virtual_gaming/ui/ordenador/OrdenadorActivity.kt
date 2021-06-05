@@ -6,20 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.core.view.get
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.triana.virtual_gaming.MainActivity
 import com.triana.virtual_gaming.R
-import com.triana.virtual_gaming.ui.login.User
 import com.triana.virtual_gaming.ui.models.Ordenador
-import com.triana.virtual_gaming.ui.models.Procesador
 import com.triana.virtual_gaming.ui.videojuegos.VideojuegoServicio
-import com.triana.virtual_gaming.ui.videojuegos.VideojuegosViewModel
 import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -35,7 +26,6 @@ class OrdenadorActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
     lateinit var volver:Button
     lateinit var titulo:EditText
     lateinit var token:String
-    //private val _procesadores = MutableLiveData<List<Procesador>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

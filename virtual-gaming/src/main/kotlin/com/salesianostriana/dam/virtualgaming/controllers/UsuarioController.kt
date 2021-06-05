@@ -33,8 +33,10 @@ class UsuarioController(
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioServicio.findByUsuario(username).toDto())
     }
 
+    @GetMapping()
+    fun getJuegosFavoritos(@RequestHeader("Authorization") token:String)=usuarioServicio.getJuegosFavoritos(token)
+
     @PutMapping()
     fun modifyUsuario(@RequestHeader("Authorization") token:String,@Valid @RequestBody usuNuevo: DtoUserEdit)=
             usuarioServicio.modifyUsuario(token, usuNuevo)
-
 }

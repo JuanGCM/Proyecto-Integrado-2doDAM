@@ -46,7 +46,7 @@ class OrdenadorServicio: BaseService<Ordenador, Long, OrdenadorRepository>() {
         }
         return usuario.ordenadores
     }
-/*
+
     fun createMiOrdenador(ordenador: MiOrdenador, token:String): Ordenador{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
@@ -62,7 +62,7 @@ class OrdenadorServicio: BaseService<Ordenador, Long, OrdenadorRepository>() {
 
         return ordena
     }
-*/
+
     fun createPC(ordenador:String, token: String):Ordenador{
         var usuario = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
                 .toTypedArray()[1])).orElseThrow {
@@ -84,15 +84,15 @@ class OrdenadorServicio: BaseService<Ordenador, Long, OrdenadorRepository>() {
     }
 
 
-    fun modifyOrdenador(id: Long, ordenadorNuevo: Ordenador): ResponseEntity<MisOrdenadoresDTO> = ordenadorRepo.findById(id)
+    fun modifyOrdenador(ordenadorNuevo: String): ResponseEntity<MisOrdenadoresDTO> = ordenadorRepo.findById(ordenadorNuevo.split(",")[0].toLong())
             .map { ordenadorAModificar ->
-                ordenadorAModificar.titulo = ordenadorNuevo.titulo
-                ordenadorAModificar.procesador = ordenadorNuevo.procesador
-                ordenadorAModificar.ram = ordenadorNuevo.ram
-                ordenadorAModificar.grafica = ordenadorNuevo.grafica
+                ordenadorAModificar.titulo = ordenadorNuevo.split(",")[1]
+                ordenadorAModificar.procesador = proceRepo.findByCode(ordenadorNuevo.split(",")[2].toInt())
+                ordenadorAModificar.ram = memoriaRepo.findByCode(ordenadorNuevo.split(",")[3].toInt())
+                ordenadorAModificar.grafica = graficaRepo.findByCode(ordenadorNuevo.split(",")[4].toInt())
                 ResponseEntity.status(HttpStatus.OK).body(ordenadorRepo.save(ordenadorAModificar).toDto())
             }.orElseThrow {
-                SingleEntityNotFoundException(id.toString(),Ordenador::class.java)
+                SingleEntityNotFoundException(ordenadorNuevo.split(",")[0],Ordenador::class.java)
    }
 
 

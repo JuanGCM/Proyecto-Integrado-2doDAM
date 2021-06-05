@@ -8,6 +8,5 @@ import java.util.*
 interface UsuarioRepository:JpaRepository<Usuario,UUID> {
 
     fun findByUsername(username : String) : Optional<Usuario>
-    fun findByEmail(email:String):List<Usuario>
-    //fun findByDeseadoContains(videojuego: Videojuego): MutableList<Usuario>
+    fun findByDeseadosContains(videojuego: Videojuego): MutableList<Usuario>
 }

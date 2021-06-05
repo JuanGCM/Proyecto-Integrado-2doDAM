@@ -15,7 +15,8 @@ data class ListadoVideojuegoDTO(var id:Long,
                                 @get:Min(0, message = "{videojuego.precio.min}")
                                 var precio: Double,
                                 @get:NotBlank(message="{videojuego.plataforma.blank}")
-                                var plataforma: String
+                                var plataforma: String,
+                                var img:String
 )
 
 data class UnVideojuegoDTO(var id:Long,
@@ -33,7 +34,7 @@ data class UnVideojuegoDTO(var id:Long,
                           @get:NotBlank(message="{videojuego.plataforma.blank}")
                           var plataforma: String,
 
-                          //var generoJuegos:List<GeneroJuegoDTO>?,
+                          var img:String,
 
                           var minProcesador:ProcesadorDTO?,
 
@@ -41,15 +42,14 @@ data class UnVideojuegoDTO(var id:Long,
 
                           var minMemoriaRAM:MemoriaRAMDTO?)
 
-                          //var imagenes: List<ImagenDTO>?)
-
 
 fun Videojuego.toDto() = ListadoVideojuegoDTO(
         id!!,
         nombre,
         descripcion,
         precio,
-        plataforma
+        plataforma,
+        img
 )
 
 fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
@@ -58,9 +58,7 @@ fun Videojuego.toSpecificDto() = UnVideojuegoDTO(
         descripcion,
         precio,
         plataforma,
-        //generoJuegos!!.map { it.toDto() },
+        img,
         minProcesador!!.toDto(),
         minTarjetaGrafica!!.toDto(),
         minMemoriaRAM!!.toDto())
-        //imagenes!!.map { it.toDto() }
-//)

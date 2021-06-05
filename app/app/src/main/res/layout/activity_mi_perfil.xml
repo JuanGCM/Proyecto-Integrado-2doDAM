@@ -21,7 +21,7 @@
                 android:id="@+id/nombre_completo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre Completo"
+                android:text="@string/nombrecompleto"
                 android:textColor="@color/rojo_claro"
                 android:textSize="25dp"
                 android:layout_marginTop="8dp"
@@ -49,7 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usuario"
+                android:text="@string/usuario"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"/>
@@ -58,7 +58,7 @@
                 android:id="@+id/usuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="usuario nombre"
+                android:text="@string/nombreusuario"
                 android:layout_marginLeft="25dp"
                 android:textSize="18dp"
                 android:textColor="@color/white"/>
@@ -88,7 +88,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="@string/email"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"/>
@@ -97,7 +97,7 @@
                 android:id="@+id/correo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="example@hotmail.com"
+                android:text="@string/email_example"
                 android:layout_marginLeft="20dp"
                 android:textSize="18dp"
                 android:textColor="@color/white"/>
@@ -127,7 +127,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fecha Nacimiento"
+                android:text="@string/fechaNaci"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"/>
@@ -136,7 +136,7 @@
                 android:id="@+id/fecha_naci"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xx-xx-xxxx"
+                android:text="@string/xxx"
                 android:layout_marginLeft="25dp"
                 android:textSize="18dp"
                 android:textColor="@color/white"/>
@@ -162,7 +162,7 @@
                 android:id="@+id/edit_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Editar Perfil"
+                android:text="@string/editarperfil"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_buttom"
                 android:drawableLeft="@drawable/ic_editar"
@@ -172,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Volver"
+                android:text="@string/volver"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_buttom"
 

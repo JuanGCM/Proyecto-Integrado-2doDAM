@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Titulo"
+                android:text="@string/titulo"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"/>
@@ -59,7 +59,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Procesador"
+                android:text="@string/proce_sadores"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"/>
@@ -95,7 +95,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Memoria Ram"
+                android:text="@string/memoria_ram"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"/>
@@ -130,7 +130,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tarjeta Gráfica"
+                android:text="@string/tarjetas_graficas"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"/>
@@ -157,15 +157,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="240dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/det_editar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Editar ORdenador"
+                android:text="@string/editar"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/edit_buttom"
                 />
@@ -174,11 +174,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Eliminar"
+                android:text="@string/eliminar"
+                android:layout_marginLeft="40dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/edit_buttom"
+                android:background="@drawable/edit_buttom" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-                />
+            <Button
+                android:id="@+id/det_volver"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="@string/volver" />
         </LinearLayout>
 
 

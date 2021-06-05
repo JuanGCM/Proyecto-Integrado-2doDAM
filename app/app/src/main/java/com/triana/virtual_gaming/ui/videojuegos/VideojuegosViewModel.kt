@@ -15,7 +15,7 @@ class VideojuegosViewModel: ViewModel() {
 
     private val _juegos = MutableLiveData<List<JuegoDetalle>>()
     private val baseUrl = "http://10.0.2.2:9000"
-    private lateinit var service: VideojuegoServicio
+    private var service: VideojuegoServicio
 
     val juegos:LiveData<List<JuegoDetalle>>
         get() = _juegos
@@ -38,7 +38,6 @@ class VideojuegosViewModel: ViewModel() {
             override fun onResponse(call: Call<List<JuegoDetalle>>, response: Response<List<JuegoDetalle>>) {
 
                 if(response.code() == 200){
-                    Log.i("ERROR","Hace la petición")
                     _juegos.value = response.body()
                 }
             }

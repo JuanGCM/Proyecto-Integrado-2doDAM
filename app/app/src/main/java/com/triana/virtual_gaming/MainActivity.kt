@@ -1,12 +1,10 @@
 package com.triana.virtual_gaming
 
-import android.content.ClipData
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -21,8 +19,8 @@ import com.triana.virtual_gaming.ui.ordenador.OrdenadorActivity
 class MainActivity : AppCompatActivity() {
 
     lateinit var pc: FloatingActionButton
-
     lateinit var perfilBot:Button
+    lateinit var ctx: Context
     companion object {
         lateinit var token: String
         lateinit var username:String
@@ -36,8 +34,12 @@ class MainActivity : AppCompatActivity() {
         val navegacion:BottomNavigationView = findViewById(R.id.nueva_navegacion)
 
         navegacion.background = null
-        navegacion.menu.getItem(1).isEnabled = false
         navegacion.menu.getItem(2).isEnabled = false
+        navegacion.menu.getItem(4).setOnMenuItemClickListener {
+            salir()
+        }
+
+        ctx = this
 
         var intent:Intent = getIntent()
         token = intent.getStringExtra("token")!!
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         perfilBot = findViewById(R.id.ver_perfil)
 
         perfilBot.setOnClickListener {
-            val inte = Intent(this, MiPerfilActivity::class.java).apply {
+            val inte = Intent(ctx, MiPerfilActivity::class.java).apply {
                 putExtra("username",username)
                 putExtra("idusu",idusu)
                 putExtra("token",token)
@@ -58,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         pc = findViewById(R.id.pc)
 
         pc.setOnClickListener{
-            val intent = Intent(this, OrdenadorActivity::class.java).apply {
+            val intent = Intent(ctx, OrdenadorActivity::class.java).apply {
                 putExtra("token", token)
                 putExtra("username",username)
                 putExtra("idusu",idusu)
@@ -68,12 +70,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navegacion.setupWithNavController(navController)
+    }
 
+    fun salir():Boolean{
+        val intell = Intent(ctx, LoginActivity::class.java)
+        startActivity(intell)
+        return true
     }
 }

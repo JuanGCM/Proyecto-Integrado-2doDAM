@@ -60,24 +60,6 @@ class Usuario(
 
     )
 
-    fun addDeseados(videojuego:Videojuego){
-        this.deseados.add(videojuego)
-        videojuego.likes!!.add(this)
-    }
-
-    fun addOrdenador(ordenador:Ordenador){
-        this.ordenadores.add(ordenador)
-    }
-
-    fun removeOrdenador(ordenador:Ordenador){
-        this.ordenadores.remove(ordenador)
-    }
-
-    fun removeDeseados(videojuego:Videojuego){
-        this.deseados.remove(videojuego)
-        videojuego.likes!!.remove(this)
-    }
-
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> =
             roles.map { SimpleGrantedAuthority("ROLE_$it") }.toMutableList()
 

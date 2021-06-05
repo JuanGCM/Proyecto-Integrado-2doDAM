@@ -34,9 +34,19 @@ class VideojuegoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(juegoService.createVideojuego(videojuegoNuevo,token).toDto())
     }
 
+    @PostMapping("/favs/{id}")
+    fun addFavoritos(@PathVariable id:Long,@RequestHeader("Authorization") token:String) = juegoService.addVideojuegoToFav(id,token)
+
+    @GetMapping("/favs")
+    fun getJuegosFavs(@RequestHeader("Authorization") auth:String)= juegoService.findAllFavs(auth)
+
     @PutMapping("/{id}")
     fun modifyVideojuego(@PathVariable id: Long,@Valid @RequestBody videojuegoNuevo: Videojuego)=
             juegoService.modifyVideojuego(id, videojuegoNuevo)
+
+    @DeleteMapping("/favs/{id}")
+    fun deleteJuegoFavPorId(@PathVariable id:Long, @RequestHeader("Authorization") token: String) =
+            juegoService.deleteFavById(id, token)
 
     @GetMapping("/{id}")
     fun getjuegoPorId(@PathVariable id:Long)= juegoService.getVideojuegoById(id).toSpecificDto()
@@ -45,5 +55,4 @@ class VideojuegoController {
     @DeleteMapping("/{id}")
     fun deleteVideojuego(@PathVariable id: Long) =
             juegoService.deleteVideojuego(id)
-
 }

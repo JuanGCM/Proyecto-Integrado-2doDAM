@@ -2,6 +2,7 @@ package com.salesianostriana.dam.virtualgaming.services
 
 import com.salesianostriana.dam.virtualgaming.dtos.ListadoVideojuegoDTO
 import com.salesianostriana.dam.virtualgaming.dtos.toDto
+import com.salesianostriana.dam.virtualgaming.dtos.toSpecificDto
 import com.salesianostriana.dam.virtualgaming.errors.ListEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.errors.SingleEntityNotFoundException
 import com.salesianostriana.dam.virtualgaming.models.GeneroJuego
@@ -116,41 +117,48 @@ class VideojuegoServicio {
                         SingleEntityNotFoundException(id.toString(),Videojuego::class.java)
     }
 
-/*
+    fun findAllFavs(token:String) = usuRepo.findById(jwt.getUserIdFromJWT(token.split(" ")
+            .toTypedArray()[1])).map {
+        usu -> juegoRepo.findByLikesContains(usu).map { it.toSpecificDto() }
+    }.orElseThrow {
+        SingleEntityNotFoundException(jwt.getUserIdFromJWT(token.split(" ")
+                .toTypedArray()[1]).toString(),Usuario::class.java)
+    }
 
-    fun addVideojuegoToDeseados(vId: Long, token:String): ResponseEntity<ListadoVideojuegoDTO> {
+
+
+    fun addVideojuegoToFav(id: Long, token:String): ResponseEntity<ListadoVideojuegoDTO> {
         var idUsuario = jwt.getUserIdFromJWT(token.split(" ").toTypedArray()[1])
         var usuario = usuRepo.findById(idUsuario).orElseThrow {
             SingleEntityNotFoundException(idUsuario.toString(),Usuario::class.java)
         }
-        var juego = juegoRepo.findById(vId).orElseThrow {
-            SingleEntityNotFoundException(vId.toString(),Videojuego::class.java)
+        var juego = juegoRepo.findById(id).orElseThrow {
+            SingleEntityNotFoundException(id.toString(),Videojuego::class.java)
         }
-        var deseado = juegoRepo.findByLikesContains(usuario)
-        var likes = usuRepo.findByDeseadoContains(juego)
-        var imagen = imagenRepo.findByVideojuego(juego)
+        var meGusta = juegoRepo.findByLikesContains(usuario)
+        var likes = usuRepo.findByDeseadosContains(juego)
         juego.likes = likes
-        juego.imagenes = imagen
-        usuario.deseados = deseado
-        usuario.addDeseados(juego)
+        usuario.deseados = meGusta
+        usuario.deseados.add(juego)
+        juego.likes!!.add(usuario)
         usuRepo.save(usuario)
         juegoRepo.save(juego)
         return ResponseEntity.status(HttpStatus.OK).body(juego.toDto())
     }
 
-    fun deleteDeseadoById(idV:Long, token:String){
-        var videojuego: Videojuego = findById(idV)
+    fun deleteFavById(id:Long, token:String){
+        var juego: Videojuego = findById(id)
         var usu: Usuario = usuServicio.findById(jwt.getUserIdFromJWT(token.split(" ").toTypedArray()[1]))
         usu.deseados = juegoRepo.findByLikesContains(usu)
-        var likesVideojuego = usuRepo.findByDeseadoContains(videojuego)
-        videojuego.likes = likesVideojuego
-        usu.removeDeseados(videojuego)
+
+        var likesJuego = usuRepo.findByDeseadosContains(juego)
+        juego.likes = likesJuego
+        usu.deseados.remove(juego)
+        juego.likes!!.remove(usu)
         usuRepo.save(usu)
-        juegoRepo.save(videojuego)
+        juegoRepo.save(juego)
     }
 
-
- */
     fun deleteVideojuego(id: Long): ResponseEntity<Any>{
         if(juegoRepo.existsById(id)){
             juegoRepo.deleteById(id)

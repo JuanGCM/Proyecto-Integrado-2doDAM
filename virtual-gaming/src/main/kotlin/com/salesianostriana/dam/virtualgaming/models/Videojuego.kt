@@ -27,8 +27,10 @@ class Videojuego(
         @OneToMany(mappedBy = "videojuego")
         var imagenes:MutableList<ImagenVideojuego>? = mutableListOf(),
 
+        var img:String,
+
         @ManyToMany
-        var likes: MutableList<Usuario>?= mutableListOf(),
+        var likes: MutableList<Usuario>? = mutableListOf(),
 
         @ManyToOne
         var minProcesador:Procesador? = null,
@@ -56,7 +58,6 @@ class Videojuego(
         else 0
     }
 
-    //helper imagen
     fun addImagen(img:ImagenVideojuego){
         imagenes!!.add(img)
     }
@@ -80,9 +81,5 @@ class Videojuego(
     fun addGeneroJuegos(generoJuego: GeneroJuego){
         generoJuegos!!.add(generoJuego)
         generoJuego.videojuegos!!.add(this)
-    }
-
-    fun removeGeneroJuegos(generoJuego: GeneroJuego){
-        generoJuegos!!.remove(generoJuego)
     }
 }
