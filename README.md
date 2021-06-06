@@ -17,3 +17,11 @@ Pasos a seguir para el uso de la aplicacion "Virtual-Gaming":
 7. En el listado de ordenadores al pinchar en uno nos enviará a otra página en donde podremos ver más ampliamente la información de nuestro ordenador, además de contar con dos botones, uno de "Editar Ordenador" y otro de "Eliminar".
 
 8. Al darle al botón de "Eliminar", eliminará el ordenador creado, para estar seguros podremos dirigirnos al listado de ordenadores.
+
+9. Para poder hacer una comparación entre los componentes de tu PC con los requisitos del videojuego tienes que ir al listado de videojuegos, darle a un juego que te interese comprar y luego al botón "Comparar", te enviará a un listado en donde se verá los requisitos junto a tu pc y te dirá si tu pc es "Apto" o no para poder jugarlo.
+
+10. En el caso de que te guste un juego del listado o tengas pensado comprarlo ya que comprobaste que lo puedes jugar en tu pc, lo puedes guardar en un listado aparte dandole al botón "Me gusta" que esta situado en la pagina de detalles del juego.
+
+11. En el listado de juegos favoritos podrás ver sus detalles y tambien en el caso de que ya no te interese, tienes la opción de darle a "No me Gusta" para quitarlo de favoritos.
+
+12. Por ultimo tienes la opción de salir, para poder cerrar la sesión en el caso de que quieras salir de la aplicación, para entrar deberás volver a ingresar tu usuario y contraseña.
